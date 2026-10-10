@@ -1,0 +1,107 @@
+seksioni,treguesi,vlera,burimi,shenim
+A. Konsistenca,0.36 × 425.000,153000.0,V15 §6; llogaritje,
+A. Konsistenca,Diferenca 0.36×P − 152.700,300.0,llogaritje,Gjykata (§49) thotë +570 lekë; aritmetika jep +300
+A. Konsistenca,R e nënkuptuar nga '+570',152430.0,llogaritje,152.430 ≠ 152.700
+A. Konsistenca,570 / 152.700,0.0037328094302554026,llogaritje,"0,373% ≠ 0,192% e pretenduar (§17.2)"
+A. Konsistenca,300 / 152.700,0.0019646365422396855,llogaritje,"0,196% ≈ 0,192% → pretendimi 0,192% përputhet me +300, jo me +570"
+A. Konsistenca,152.700 + 78.300,231000,V15 §21.3,= 231.000 ✓
+A. Konsistenca,52.000 / 152.700,0.34053700065487885,V15 §21.1,≈ 34% ✓
+A. Konsistenca,231.000 / 153.000 − 1,0.5098039215686274,V15 §103,Gjykata shkruan '30% më e lartë'; aritmetika jep 51%
+A. Konsistenca,1 − 153.000 / 231.000,0.33766233766233766,llogaritje,"33,8%: ndoshta '30%' i referohet kësaj ane të raportit"
+A. Konsistenca,Rritja e pagës së Presidentit,0.6536964980544746,V15 §100,Gjykata: 'afërsisht 65%' ✓
+A. Konsistenca,152.700 / 257.000 (raporti para 2023),0.5941634241245136,V15 §21.2,Shoqata: 59% ✓
+B. Seritë e R,R0  — zbatim i gabuar 2019–2021,118100,shih kodin,κ = R/425.000 = 0.2779; ndryshimi ndaj R2 = -22.7%
+B. Seritë e R,R1  — sipas KLSH 2021,132100,shih kodin,κ = R/425.000 = 0.3108; ndryshimi ndaj R2 = -13.5%
+B. Seritë e R,R2  — e drejtë e fituar sipas V35/2022,152700,shih kodin,κ = R/425.000 = 0.3593; ndryshimi ndaj R2 = +0.0%
+B. Seritë e R,"R3  — ligji 33/2023 (0,36×P), i shfuqizuar",153000,shih kodin,κ = R/425.000 = 0.3600; ndryshimi ndaj R2 = +0.2%
+B. Seritë e R,"R4  — ligji 95/2026 (0,38×P)",161500,shih kodin,κ = R/425.000 = 0.3800; ndryshimi ndaj R2 = +5.8%
+B. Seritë e R,"K1  — kundërfaktik: R2 × (1+44%), kategoria e shërbimit civil",219888,shih kodin,κ = R/425.000 = 0.5174; ndryshimi ndaj R2 = +44.0%
+B. Seritë e R,"K2  — kundërfaktik: R2 + 52.000 (Shoqata, kat. 1 kl. 1–3)",204700,shih kodin,κ = R/425.000 = 0.4816; ndryshimi ndaj R2 = +34.1%
+B. Seritë e R,"K3  — kundërfaktik: 231.000 (kërkuesi, referenca 2025)",231000,shih kodin,κ = R/425.000 = 0.5435; ndryshimi ndaj R2 = +51.3%
+B. Seritë e R,"K4  — kundërfaktik: R2 × P2023/P2022 (raporti 0,594 me Presidentin)",252519,shih kodin,κ = R/425.000 = 0.5942; ndryshimi ndaj R2 = +65.4%
+C. Tregues 2016–2023,Paga minimale zyrtare,0.8181818181818181,V15 §99 (INSTAT),
+C. Tregues 2016–2023,"Paga mesatare, sektori privat",0.5016719344052036,V15 §99 (INSTAT),
+C. Tregues 2016–2023,"Paga mesatare, sektori shtetëror",0.5028446630450742,V15 §99 (INSTAT),
+C. Tregues 2016–2023,Paga mesatare mujore bruto,0.4834076379542396,V15 §99 (INSTAT),
+C. Tregues 2016–2023,Kategoria referuese e shërbimit civil 2019–2023,0.44,V15 §100,
+C. Tregues 2016–2023,Paga e Presidentit 2022→2023,0.6536964980544746,V15 §100,
+C. Tregues 2016–2023,R e magjistratëve: R2→R4 (ligji 95/2026),0.057629338572364075,llogaritje,
+D. Korridori §109,"Kufiri i poshtëm (shërbimi civil, ~44%)",219888,interpretim (b),κ = 0.517
+D. Korridori §109,"Kufiri i sipërm (Presidenti, +65,4%)",252519,interpretim (b),κ = 0.594
+D. Korridori §109,"R4 (0,38×P) brenda korridorit?",False,llogaritje,"R4 = 161,500; mungesa ndaj kufirit të poshtëm = 58,388 lekë/muaj"
+E. Prapambetjet,Muaj nga 1.4.2023 deri 30.9.2026,42,llogaritje,
+E. Prapambetjet,"R4 (95/2026) | G1, 5 vjet, pa",714000,llogaritje bruto,"diferencë mujore 17,000 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"R4 (95/2026) | G2, 15 vjet, pa",813960,llogaritje bruto,"diferencë mujore 19,380 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"R4 (95/2026) | G3, 25 vjet, kryetar",987462,llogaritje bruto,"diferencë mujore 23,511 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"R4 (95/2026) | G2, 10 vjet, pa, antikorr.",1343748,llogaritje bruto,"diferencë mujore 31,994 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K1 (+44%) | G1, 5 vjet, pa",5618592,llogaritje bruto,"diferencë mujore 133,776 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K1 (+44%) | G2, 15 vjet, pa",6405195,llogaritje bruto,"diferencë mujore 152,505 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K1 (+44%) | G3, 25 vjet, kryetar",7770513,llogaritje bruto,"diferencë mujore 185,012 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K1 (+44%) | G2, 10 vjet, pa, antikorr.",10574190,llogaritje bruto,"diferencë mujore 251,766 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K4 (raporti 0,594) | G1, 5 vjet, pa",8359634,llogaritje bruto,"diferencë mujore 199,039 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K4 (raporti 0,594) | G2, 15 vjet, pa",9529983,llogaritje bruto,"diferencë mujore 226,904 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K4 (raporti 0,594) | G3, 25 vjet, kryetar",11561374,llogaritje bruto,"diferencë mujore 275,271 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,"K4 (raporti 0,594) | G2, 10 vjet, pa, antikorr.",15732832,llogaritje bruto,"diferencë mujore 374,591 lekë × 42 muaj; pa interes, pa indeksimin 2026"
+E. Prapambetjet,Kosto vjetore e pretenduar nga Shoqata,3700875000,V15 §21.4,"pretendim i palës; baza, N dhe elementet e përfshira nuk dihen"
+F. Afatet,Ditë vonesë L95/2026 pas afatit 31.7.2026,49,V15 disp. 3–4; L95,
+F. Afatet,Ditë nga hyrja në fuqi e V15 deri në L95,154,FZ 80; L95,
+G. Dokumentet e reja,I-2 2026 / I-2 2025,0.02499999999999991,VKM 325; V15 §17.2,"= 2,50% saktësisht → indeksim 2026 i pagave civile (VKM 131/2026)"
+G. Dokumentet e reja,R e Këshillave (I-2 + 14.000) nga 1.8.2026,236425,KLGJ 435; KLP 144,κ = 0.5563; ndaj 152.700: +54.8%
+G. Dokumentet e reja,R e Këshillave para indeksimit 2026 (I-2 2025 + 14.000),231000,V15 §17.2,= 231.000 = 152.700 + 78.300 ✓
+G. Dokumentet e reja,Lexim titullor: Drejtor DP përmbajtjes (I-4) + 14.000,198500,VKM 325 Lidhja 7,alternativë interpretuese; nën korridor
+G. Dokumentet e reja,Lexim titullor: Drejtor DP mbështetëse (I-5) + 14.000,188250,VKM 325 Lidhja 7,
+G. Dokumentet e reja,VKM 187: I-b + 14.000,143800,"VKM 187 Lidhja 1, 4",≠ 152.700 → baza e V35 nuk riprodhohet nga teksti përfundimtar i VKM 187
+G. Dokumentet e reja,VKM 187: I-a + 14.000,155900,VKM 187 Lidhja 1,≠ 152.700
+G. Dokumentet e reja,L95 ndaj R e Këshillave (ndryshim nominal),-0.3169081103944168,llogaritje,"nëse R = 236.425 ishte në fuqi 1.8–18.9.2026, L95 e ul nominalisht"
+G. Dokumentet e reja,"220.320 = 153.000 × 1,44 ?",True,llogaritje,PO: R3 e rritur me 44%
+G. Dokumentet e reja,198.963 / 153.000,1.3004117647058824,llogaritje,nuk riprodhohet nga asnjë burim
+H. Kalibrimi fiskal,"Njësi-R të nënkuptuara nga KM (0,38 vs 0,36; me shtesat e GJL në draft)",4902,KDNJMIP; llogaritje,mbivlerësim: drafti fillestar kishte edhe 80%+5% për GJL/PP
+H. Kalibrimi fiskal,Njësi-R të nënkuptuara nga Shoqata (231.000 vs 153.000),3954,V15 §21.4; llogaritje,pretendim i palës
+H. Kalibrimi fiskal,Kosto vjetore R=236.425 kundrejt 161.500 (baza Shoqata),3554975120,llogaritje (d),"lekë/vit, përfshirë çfarëdo kontributi që përmban baza"
+H. Kalibrimi fiskal,Prapambetje 4.2023–7.2026 sipas Këshillave (baza Shoqata),12486400351,llogaritje (d),"33+7 muaj; seri e verifikuar: VKM 325 orig., VKM 131/2026"
+H. Kalibrimi fiskal,Prapambetje 4.2023–7.2026 sipas L95 (baza Shoqata),1344334936,llogaritje (d),
+H. Kalibrimi fiskal,Kosto vjetore R=236.425 kundrejt 161.500 (baza KM),4407352941,llogaritje (d),"lekë/vit, përfshirë çfarëdo kontributi që përmban baza"
+H. Kalibrimi fiskal,Prapambetje 4.2023–7.2026 sipas Këshillave (baza KM),15480269608,llogaritje (d),"33+7 muaj; seri e verifikuar: VKM 325 orig., VKM 131/2026"
+H. Kalibrimi fiskal,Prapambetje 4.2023–7.2026 sipas L95 (baza KM),1666666667,llogaritje (d),
+H. Kalibrimi fiskal,Njësi-R të nënkuptuara: KM prill–dhjetor 2023 (260 mln),3399,KDNJMIP; llogaritje,baza konvergon me atë të Shoqatës (~3.950)
+H. Kalibrimi fiskal,Njësi-R të nënkuptuara: KM 2024–2025 (740 mln),3627,KDNJMIP; llogaritje,baza konvergon me atë të Shoqatës (~3.950)
+H. Kalibrimi fiskal,"Njësi-R të nënkuptuara: KM 2023–2026 total (1,5 mld)",3922,KDNJMIP; llogaritje,baza konvergon me atë të Shoqatës (~3.950)
+H. Kalibrimi fiskal,"Kontributet / pagat, buxheti i shtetit 2026",0.16596038156014226,AN 2/2026,≈ norma mesatare e kontributeve të punëdhënësit
+H. Kalibrimi fiskal,Kosto vjetore (baza Shoqata) / fondi i pagave i shtetit 2026,0.02953912919360777,llogaritje,
+I. V35 dhe KLSH,"R sipas standardit të V35, 2016 (I-b 118.000 + 14.000)",132000,"V35 §§68, 76",
+I. V35 dhe KLSH,"R sipas standardit të V35, 2019 (I-b 129.800 + 14.000)",143800,"V35 §§77, 80",
+I. V35 dhe KLSH,"152.700 − R(V35, 2019)",8900,llogaritje,8.900 lekë pa shpjegim: 152.700 nuk gjendet në V35; vjen nga relacioni i 2023 (V15 §44)
+I. V35 dhe KLSH,R sipas rekomandimit KLSH 2021 (II-a + 14.000),132100,"KLSH, auditim tematik 2021",KLSH përdori II-a; V35 e korrigjoi më pas te I-b
+I. V35 dhe KLSH,V35 në VKM 325: klasa më e ulët e kategorisë I (I-5) + 14.000,188250,"V35 §§65, 72; VKM 325",κ = 0.443; brenda korridorit: False
+I. V35 dhe KLSH,V35 në VKM 325: drejtor DP përmbajtjeje (I-4) + 14.000,198500,"V35 §§65, 72; VKM 325",κ = 0.467; brenda korridorit: False
+I. V35 dhe KLSH,V35 në VKM 325: pozicionet e barasvlershme me I-b (I-2) + 14.000,236425,"V35 §§65, 72; VKM 325",κ = 0.556; brenda korridorit: True
+I. V35 dhe KLSH,"Validim W(R): Kryetar, 15 vjet",1,"KLSH GJL 2023, f. 34","W model = 303,045; KLSH = 303,044"
+I. V35 dhe KLSH,"Validim W(R): Kryetar, 25 vjet",1,"KLSH GJL 2023, f. 34","W model = 326,665; KLSH = 326,664"
+I. V35 dhe KLSH,"Validim W(R): Zv/kryetar, 15 vjet",0,"KLSH GJL 2023, f. 34","W model = 290,880; KLSH = 290,880"
+I. V35 dhe KLSH,"Validim W(R): Zv/kryetar, 25 vjet",0,"KLSH GJL 2023, f. 34","W model = 314,500; KLSH = 314,500"
+I. V35 dhe KLSH,"Validim W(R): Gjyqtar nga magjistratët, 25 vjet",0,"KLSH GJL 2023, f. 34","W model = 302,336; KLSH = 302,336"
+I. V35 dhe KLSH,"Validim W(R): Gjyqtar nga juristët, 15 vjet",0,"KLSH GJL 2023, f. 34","W model = 278,716; KLSH = 278,716"
+I. V35 dhe KLSH,Devijimi maksimal i modelit W(R) nga të dhënat e KLSH (lekë),1,llogaritje,modeli linear riprodhon 6/6 rreshta; R e paguar në GJL në periudhën e audituar = 118.100
+I. V35 dhe KLSH,Vështirësia e vërejtur (gjyqtarët nga gjykatat e posaçme) / paga bruto fillestare,0.6000016441554384,KLSH GJL 2023,"60%, jo 80% si në ligj → mospërputhje për t'u verifikuar"
+I. V35 dhe KLSH,"Kontributet/pagat, fondi shtesë KLGJ 2023 (25 mln / 140 mln)",0.17857142857142858,KLSH KLGJ 2024,
+J. Ligji 33/2023,I-b pas VKM 621/2022 + 14.000,152700,RIA; Raporti KEF,= 152.700 ✓ → origjina e R2 e zgjidhur
+J. Ligji 33/2023,Rritja e I-b nga VKM 621/2022,0.0685670261941449,llogaritje,
+J. Ligji 33/2023,Rritja e II-a nga VKM 621/2022,0.06943268416596116,llogaritje,
+J. Ligji 33/2023,R para reformës,107100,Raporti KEF,
+J. Ligji 33/2023,"Amendamenti i refuzuar κ = 0,46 (Alibeaj)",195500.0,Raporti i Komisionit Ligjor 2023,nën korridor: True
+J. Ligji 33/2023,"Njësi-R të nënkuptuara nga RIA 959 mln/vit, nga 126.300 (ligji 50/2021 pas VKM 621)",2993,RIA; llogaritje (d),"baza buxhetore e 2023 nuk është e qartë; RIA ka edhe shifra të papajtueshme (48,9; 79,9)"
+J. Ligji 33/2023,"Njësi-R të nënkuptuara nga RIA 959 mln/vit, nga 132.100 (KLSH)",3824,RIA; llogaritje (d),"baza buxhetore e 2023 nuk është e qartë; RIA ka edhe shifra të papajtueshme (48,9; 79,9)"
+J. Ligji 33/2023,"Njësi-R të nënkuptuara nga RIA 959 mln/vit, nga 118.100",2290,RIA; llogaritje (d),"baza buxhetore e 2023 nuk është e qartë; RIA ka edhe shifra të papajtueshme (48,9; 79,9)"
+J. Ligji 33/2023,"Rritja e referencës civile, 9.2022→2023 (231.000 / 152.700)",0.5127701375245579,llogaritje,nëse I-2 = 217.000 që nga 1.4.2023 (e paverifikuar: VKM 325 origjinale mungon)
+K. Seritë e verifikuara,I-2: 1.4.2023 → 31.12.2025 (VKM 325 orig.; VKM 337 pa ndryshim),217000,"VKM 325 Lidhja 1, pika 7; VKM 337/2025",supozimi i mëparshëm konfirmohet
+K. Seritë e verifikuara,"I-2 nga 1.1.2026 (VKM 131/2026, indeksim 2,5%)",222425,"VKM 131/2026, ndarja II/b, III/b","efekt nga 1.1.2026, jo nga data e miratimit"
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: II-a → I-2,0.8374259102455546,VKM 187; VKM 325 orig.,
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: II-a → I-4,0.5241320914479255,VKM 187; VKM 325 orig.,
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: II-a → I-5,0.4394580863674853,VKM 187; VKM 325 orig.,≈ 44% e V15 §100
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: I-b → I-2,0.6718027734976888,VKM 187; VKM 325 orig.,
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: I-b → I-4,0.386748844375963,VKM 187; VKM 325 orig.,
+K. Seritë e verifikuara,Rritja e pagës për pozicion 2019→2023: I-b → I-5,0.3097072419106317,VKM 187; VKM 325 orig.,
+K. Seritë e verifikuara,"Prapambetje 4.2023–7.2026 sipas Këshillave | G1, 5 vjet, pa",6315950,llogaritje,"33 muaj me 231.000 + 7 muaj me 236.425, kundrejt 153.000; pa indeksimin e R në 2026"
+K. Seritë e verifikuara,"Prapambetje 4.2023–7.2026 sipas Këshillave | G2, 15 vjet, pa",7200183,llogaritje,"33 muaj me 231.000 + 7 muaj me 236.425, kundrejt 153.000; pa indeksimin e R në 2026"
+K. Seritë e verifikuara,"Prapambetje 4.2023–7.2026 sipas Këshillave | G3, 25 vjet, kryetar",8734959,llogaritje,"33 muaj me 231.000 + 7 muaj me 236.425, kundrejt 153.000; pa indeksimin e R në 2026"
+K. Seritë e verifikuara,"Prapambetje 4.2023–7.2026 sipas Këshillave | G2, 10 vjet, pa, antikorr.",11886618,llogaritje,"33 muaj me 231.000 + 7 muaj me 236.425, kundrejt 153.000; pa indeksimin e R në 2026"

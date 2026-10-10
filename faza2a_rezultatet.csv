@@ -1,0 +1,84 @@
+seksioni,treguesi,vlera,shenim
+F2,"L = 152.700 × 1,44",219888.0,(b) kufi i poshtëm
+F2,U = 152.700 × 425.000/257.000,252519.4553,(b) kufi i sipërm
+F2,g_civ ekzakt (II-a 118.100 → I-5 170.000),0.4395,
+F2,L me g_civ ekzakt,219805.2498,ndjeshmëri e rrumbullakimit të 44%
+F2,κ në L,0.5174,
+F2,κ në U,0.5942,
+F3,π 3.2023→12.2025 (rishikimi 1.1.2026),0.0543,
+F3,π 3.2023→8.2026,0.0762,
+F3,π 8.2022→3.2023 (tashmë brenda korridorit),0.0413,
+F3,ρ civile 4.2023→1.2026,0.0235,
+F3,ρ Presidenti 4.2023→1.2026,0.025,
+F3,ρ civile 9.2022→4.2023,0.5128,gjurma e saktë sipas V35
+F4,"g në 1.1.2026, rregulli 'max'",0.0543,
+F4,"g në 1.1.2026, rregulli 'ichk'",0.0543,
+F4,"g në 1.1.2026, rregulli 'ref'",0.0235,
+F4,"g në 1.1.2026, rregulli 'tavan'",0.04,
+F4,g e gabuar me mbledhje (π + ρ),0.0778,numërim i dyfishtë — përjashtohet
+F5,R_min 2023-04 | ref civile | skenari A,219888.0,C4_referenca
+F5,R_min 2025-12 | ref civile | skenari A,219888.0,C4_referenca
+F5,R_min 2026-01 | ref civile | skenari A,231823.4656,C5_rishikimi
+F5,R_min 2026-07 | ref civile | skenari A,231823.4656,C3_mosregresion
+F5,R_min 2026-08 | ref civile | skenari A,236425,C6_skenari_A
+F5,R_min 2026-12 | ref civile | skenari A,236425,C3_mosregresion
+F6,"A në njësi R, 4.2023–2026-07 | ref civile | sk A",2732293.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-07 | ref civile | sk A",10803487545.5825,
+F6,"A në njësi R, 4.2023–2026-12 | ref civile | sk A",3015843.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-12 | ref civile | sk A",11924644245.5825,
+F7,"ΔC/vit kundrejt L95, N_R i_ulet | ref civile | sk A",2551950000.0,
+F7,"ΔC/vit kundrejt L95, N_R qendror | ref civile | sk A",3363470100.0,
+F7,"ΔC/vit kundrejt L95, N_R i_larte | ref civile | sk A",4169886300.0,
+F7,"ΔC/vit me kontribute 16,6%, N_R qendror | ref civile | sk A",3921806136.6,
+F5,R_min 2023-04 | ref civile | skenari B,219888.0,C4_referenca
+F5,R_min 2025-12 | ref civile | skenari B,219888.0,C4_referenca
+F5,R_min 2026-01 | ref civile | skenari B,231823.4656,C5_rishikimi
+F5,R_min 2026-07 | ref civile | skenari B,231823.4656,C3_mosregresion
+F5,R_min 2026-08 | ref civile | skenari B,231823.4656,C3_mosregresion
+F5,R_min 2026-12 | ref civile | skenari B,231823.4656,C3_mosregresion
+F6,"A në njësi R, 4.2023–2026-07 | ref civile | sk B",2732293.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-07 | ref civile | sk B",10803487545.5825,
+F6,"A në njësi R, 4.2023–2026-12 | ref civile | sk B",2997437.1211,
+F6,"A agregat (N_R qendror), 4.2023–2026-12 | ref civile | sk B",11851866376.7724,
+F7,"ΔC/vit kundrejt L95, N_R i_ulet | ref civile | sk B",2386294759.9165,
+F7,"ΔC/vit kundrejt L95, N_R qendror | ref civile | sk B",3145136493.5699,
+F7,"ΔC/vit kundrejt L95, N_R i_larte | ref civile | sk B",3899205637.7035,
+F7,"ΔC/vit me kontribute 16,6%, N_R qendror | ref civile | sk B",3667229151.5025,
+F5,R_min 2023-04 | ref presidenti | skenari A,219888.0,C4_referenca
+F5,R_min 2025-12 | ref presidenti | skenari A,219888.0,C4_referenca
+F5,R_min 2026-01 | ref presidenti | skenari A,231823.4656,C5_rishikimi
+F5,R_min 2026-07 | ref presidenti | skenari A,231823.4656,C3_mosregresion
+F5,R_min 2026-08 | ref presidenti | skenari A,236425,C6_skenari_A
+F5,R_min 2026-12 | ref presidenti | skenari A,236425,C3_mosregresion
+F6,"A në njësi R, 4.2023–2026-07 | ref presidenti | sk A",2732293.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-07 | ref presidenti | sk A",10803487545.5825,
+F6,"A në njësi R, 4.2023–2026-12 | ref presidenti | sk A",3015843.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-12 | ref presidenti | sk A",11924644245.5825,
+F7,"ΔC/vit kundrejt L95, N_R i_ulet | ref presidenti | sk A",2551950000.0,
+F7,"ΔC/vit kundrejt L95, N_R qendror | ref presidenti | sk A",3363470100.0,
+F7,"ΔC/vit kundrejt L95, N_R i_larte | ref presidenti | sk A",4169886300.0,
+F7,"ΔC/vit me kontribute 16,6%, N_R qendror | ref presidenti | sk A",3921806136.6,
+F5,R_min 2023-04 | ref presidenti | skenari B,219888.0,C4_referenca
+F5,R_min 2025-12 | ref presidenti | skenari B,219888.0,C4_referenca
+F5,R_min 2026-01 | ref presidenti | skenari B,231823.4656,C5_rishikimi
+F5,R_min 2026-07 | ref presidenti | skenari B,231823.4656,C3_mosregresion
+F5,R_min 2026-08 | ref presidenti | skenari B,231823.4656,C3_mosregresion
+F5,R_min 2026-12 | ref presidenti | skenari B,231823.4656,C3_mosregresion
+F6,"A në njësi R, 4.2023–2026-07 | ref presidenti | sk B",2732293.2589,
+F6,"A agregat (N_R qendror), 4.2023–2026-07 | ref presidenti | sk B",10803487545.5825,
+F6,"A në njësi R, 4.2023–2026-12 | ref presidenti | sk B",2997437.1211,
+F6,"A agregat (N_R qendror), 4.2023–2026-12 | ref presidenti | sk B",11851866376.7724,
+F7,"ΔC/vit kundrejt L95, N_R i_ulet | ref presidenti | sk B",2386294759.9165,
+F7,"ΔC/vit kundrejt L95, N_R qendror | ref presidenti | sk B",3145136493.5699,
+F7,"ΔC/vit kundrejt L95, N_R i_larte | ref presidenti | sk B",3899205637.7035,
+F7,"ΔC/vit me kontribute 16,6%, N_R qendror | ref presidenti | sk B",3667229151.5025,
+F5-ndj,"R 2026-01 me tavan 4% (ref civile, B)",228683.52,C5_rishikimi
+F5-ndj,"R 2026-01 me max(π,ρ) (ref civile, B)",231823.4656,C5_rishikimi
+F5-ndj,"Erozioni real nga tavani 4%, 1.2026",-0.0135,
+6.4,Diferenca A − B në R nga 8.2026 (rruga minimale),4601.5344,
+6.4,"R e Këshillave mbi rrugën minimale B, 2026",0.0198,
+F7,R_Këshillave − R_L95 (2026),70887.5,
+F8,"Dyshemeja C5 në 1.2026 për R*_0 = 231.000, rregulli 'max'",243538.6221,
+F8,"Mungesa e rrugës së Këshillave ndaj dyshemesë C5 në 1.2026, 'max'",7113.6221,
+F8,"Dyshemeja C5 në 1.2026 për R*_0 = 231.000, rregulli 'tavan'",240240.0,
+F8,"Mungesa e rrugës së Këshillave ndaj dyshemesë C5 në 1.2026, 'tavan'",3815.0,

@@ -1,0 +1,65 @@
+alt,emri,skenari,standardi_C5,R0,referenca,C1_korridori,C3_mosregresion,C4_C5_C6_mbi_rrugen_min,C6_veças,realizueshme,muaji_i_pare_shkeljes_C4_C6,mungesa_maks_lek
+A0,"L95 (κ = 0,38)",A,"g = max(π, ρ)",161500,presidenti,False,True,False,False,False,2026-01,70887.5
+A0,"L95 (κ = 0,38)",A,g = π,161500,presidenti,False,True,False,False,False,2026-01,70887.5
+A0,"L95 (κ = 0,38)",A,g = ρ,161500,presidenti,False,True,False,False,False,2026-08,70887.5
+A0,"L95 (κ = 0,38)",A,g = min(π; 4%),161500,presidenti,False,True,False,False,False,2026-01,70887.5
+A0,"L95 (κ = 0,38)",B,"g = max(π, ρ)",161500,presidenti,False,True,False,True,False,2026-01,4728.68
+A0,"L95 (κ = 0,38)",B,g = π,161500,presidenti,False,True,False,True,False,2026-01,4728.68
+A0,"L95 (κ = 0,38)",B,g = ρ,161500,presidenti,False,True,True,True,False,,0.0
+A0,"L95 (κ = 0,38)",B,g = min(π; 4%),161500,presidenti,False,True,False,True,False,2026-01,2422.5
+A1,Këshillat (I-2 + 14.000),A,"g = max(π, ρ)",231000,civile,True,True,False,True,False,2026-01,7113.62
+A1,Këshillat (I-2 + 14.000),A,g = π,231000,civile,True,True,False,True,False,2026-01,7113.62
+A1,Këshillat (I-2 + 14.000),A,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A1,Këshillat (I-2 + 14.000),A,g = min(π; 4%),231000,civile,True,True,False,True,False,2026-01,3815.0
+A1,Këshillat (I-2 + 14.000),B,"g = max(π, ρ)",231000,civile,True,True,False,True,False,2026-01,7113.62
+A1,Këshillat (I-2 + 14.000),B,g = π,231000,civile,True,True,False,True,False,2026-01,7113.62
+A1,Këshillat (I-2 + 14.000),B,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A1,Këshillat (I-2 + 14.000),B,g = min(π; 4%),231000,civile,True,True,False,True,False,2026-01,3815.0
+A2,Mesi 198.963,A,"g = max(π, ρ)",198963,civile,False,True,False,False,False,2026-01,37462
+A2,Mesi 198.963,A,g = π,198963,civile,False,True,False,False,False,2026-01,37462
+A2,Mesi 198.963,A,g = ρ,198963,civile,False,True,False,False,False,2026-01,37462
+A2,Mesi 198.963,A,g = min(π; 4%),198963,civile,False,True,False,False,False,2026-01,37462
+A2,Mesi 198.963,B,"g = max(π, ρ)",198963,civile,False,True,False,True,False,2026-01,10799.66
+A2,Mesi 198.963,B,g = π,198963,civile,False,True,False,True,False,2026-01,10799.66
+A2,Mesi 198.963,B,g = ρ,198963,civile,False,True,False,True,False,2026-01,4672.62
+A2,Mesi 198.963,B,g = min(π; 4%),198963,civile,False,True,False,True,False,2026-01,7958.52
+A3,"Ankora e Presidentit (κ ≈ 0,594)",A,"g = max(π, ρ)",252519.46,presidenti,True,True,False,True,False,2026-01,7393.71
+A3,"Ankora e Presidentit (κ ≈ 0,594)",A,g = π,252519.46,presidenti,True,True,False,True,False,2026-01,7393.71
+A3,"Ankora e Presidentit (κ ≈ 0,594)",A,g = ρ,252519.46,presidenti,True,True,True,True,True,,0.0
+A3,"Ankora e Presidentit (κ ≈ 0,594)",A,g = min(π; 4%),252519.46,presidenti,True,True,False,True,False,2026-01,3787.79
+A3,"Ankora e Presidentit (κ ≈ 0,594)",B,"g = max(π, ρ)",252519.46,presidenti,True,True,False,True,False,2026-01,7393.71
+A3,"Ankora e Presidentit (κ ≈ 0,594)",B,g = π,252519.46,presidenti,True,True,False,True,False,2026-01,7393.71
+A3,"Ankora e Presidentit (κ ≈ 0,594)",B,g = ρ,252519.46,presidenti,True,True,True,True,True,,0.0
+A3,"Ankora e Presidentit (κ ≈ 0,594)",B,g = min(π; 4%),252519.46,presidenti,True,True,False,True,False,2026-01,3787.79
+A4,"Referenca e dyfishtë, R*_0 = 231.000",A,"g = max(π, ρ)",231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",A,g = π,231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",A,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",A,g = min(π; 4%),231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",B,"g = max(π, ρ)",231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",B,g = π,231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",B,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A4,"Referenca e dyfishtë, R*_0 = 231.000",B,g = min(π; 4%),231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",A,"g = max(π, ρ)",231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",A,g = π,231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",A,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",A,g = min(π; 4%),231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",B,"g = max(π, ρ)",231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",B,g = π,231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",B,g = ρ,231000,civile,True,True,True,True,True,,0.0
+A5,"Vetëm IÇK, R*_0 = 231.000",B,g = min(π; 4%),231000,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",A,"g = max(π, ρ)",219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",A,g = π,219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",A,g = ρ,219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",A,g = min(π; 4%),219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",B,"g = max(π, ρ)",219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",B,g = π,219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",B,g = ρ,219888.0,civile,True,True,True,True,True,,0.0
+A4L,"Referenca e dyfishtë, R*_0 = L (ndjeshmëri)",B,g = min(π; 4%),219888.0,civile,True,True,True,True,True,,0.0
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",A,"g = max(π, ρ)",219888.0,civile,True,True,False,False,False,2026-08,4601.53
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",A,g = π,219888.0,civile,True,True,False,False,False,2026-08,4601.53
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",A,g = ρ,219888.0,civile,True,True,False,False,False,2026-08,4601.53
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",A,g = min(π; 4%),219888.0,civile,True,True,False,False,False,2026-08,4601.53
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",B,"g = max(π, ρ)",219888.0,civile,True,True,True,True,True,,0.0
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",B,g = π,219888.0,civile,True,True,True,True,True,,0.0
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",B,g = ρ,219888.0,civile,True,True,True,True,True,,0.0
+A5L,"Vetëm IÇK, R*_0 = L (ndjeshmëri)",B,g = min(π; 4%),219888.0,civile,True,True,True,True,True,,0.0

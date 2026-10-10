@@ -1,0 +1,14 @@
+formula,hyrja,rezultati
+F1,W(R=219.888; G2; y=15; pa drejtues),501344.64
+F1,ω(G2; y=15),2.28
+F1,"W(R=165.537,5; G2; y=15)",377425.5
+F1,W(R=118.100; G3; y=25; kryetar) — kontroll KLSH 326.664,326664.6
+F2,"L = 152.700 × 1,44",219888.0
+F3,π = I(2025-12)/I(2023-03) − 1,0.0543
+F4,"g = max(π, ρ) në 1.1.2026, ref civile",0.0543
+F5,"R_min 2026-01, R*_0 = L, ref civile, B",231823.4656
+F6,"A për G2 y=15, 4.2023–7.2026, R*_0 = L, ref civile",6229628.6302
+F7,"ΔC/vit, R = 236.425 kundrejt 165.537,5, N_R = 3.954",3363470100.0
+F8,kontrollo(rruga e Këshillave; R*_0 = 231.000; civile; A; C5 = 'max'),"{'C1_korridori': True, 'C3_mosregresion': True, 'C4_C5_C6_mbi_rrugen_min': False}"
+F8,kontrollo(rruga e Këshillave; R*_0 = 231.000; civile; A; C5 = 'ref'),"{'C1_korridori': True, 'C3_mosregresion': True, 'C4_C5_C6_mbi_rrugen_min': True}"
+F8,kontrollo(rruga e Këshillave; R*_0 = 231.000; civile; A; C5 = 'tavan'),"{'C1_korridori': True, 'C3_mosregresion': True, 'C4_C5_C6_mbi_rrugen_min': False}"

@@ -1,0 +1,24 @@
+simboli,kuptimi,njesia,burimi
+t,muaji kalendarik (YYYY-MM),muaj,—
+R_t,paga referuese bazë e magjistratit në muajin t,lekë/muaj bruto,L96 neni 12
+R*_0,baza e riparuar në 1.4.2023,lekë/muaj bruto,V15 §§109–110
+R_V35,"e drejta e fituar, shtator 2022 = 152.700",lekë/muaj bruto,V15 §95; VKM 621/2022
+P_t,paga e Presidentit,lekë/muaj bruto,ligji 34/2023
+κ,koeficienti R/P,numër i pastër,L95 neni 1
+Ref_t,referenca e zgjedhur: civile (I-2 + 14.000) ose P_t,lekë/muaj,V15 §109
+W,paga mujore bruto totale e një magjistrati,lekë/muaj bruto,"L96 nenet 2/j, 12, 14"
+ω,"shumëzuesi i profilit, W/R",numër i pastër,F1
+"γ, λ, δ, y","shtesa e grupit, shtesa drejtuese, shtesa GJKKO/SPAK, vitet e vjetërsisë",numra të pastër; vite,L96
+"g_civ, g_P","rritjet e referencave 2022→2023: 44% dhe 65,4%",përqindje kumulative,V15 §100
+"L, U",kufiri i poshtëm dhe i sipërm i korridorit për R*_0,lekë/muaj,F2 (konstruksion b)
+I_t,indeksi i çmimeve të konsumit (IÇK kombëtar),indeks,INSTAT
+π,inflacioni kumulativ ndërmjet dy muajve,përqindje kumulative,F3
+ρ,ndryshimi kumulativ i referencës ndërmjet dy muajve,përqindje kumulative,F3
+g,rritja e R në një datë rishikimi,përqindje kumulative,F4
+θ,tavani i indeksimit (target BSH + 1 p.p.),pikë përqindjeje / përqindje,ligji 33/2023; L95
+τ_k,"data e rishikimit k (çdo ≤ 2 vjet, e para 1.1.2026)",muaj,ligji 33/2023; L95
+A,prapambetja (diferenca e papaguar e akumuluar),lekë bruto,F6
+N_R,"njësi-R: Σ W_i / R, kosto mujore për 1 lekë rritje të R",numër (magjistratë-ekuivalentë),Faza 1 §4.5
+c,norma e kontributeve të punëdhënësit,përqindje,AN 2/2026
+ΔC,kosto shtesë vjetore,lekë/vit,F7
+A/B,skenarët juridikë: A = aktet e Këshillave të vlefshme; B = pa kompetencë,—,"Faza 1, P1"
