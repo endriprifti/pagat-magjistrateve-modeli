@@ -4,7 +4,19 @@ Kodi i riprodhueshëm i studimit *« Paga e magjistratëve pas Vendimit të Gjyk
 
 Çdo shifër e tekstit të studimit del nga këto skripte dhe gjendet në një nga skedarët CSV. Të dhënat janë verifikuar deri më 7.10.2026.
 
+## Versioni i cituar në punim
+
+Punimi i referohet etiketës **`v1.0`** të kësaj depoje. Për ta riprodhuar saktësisht:
+
+```bash
+git clone https://github.com/endriprifti/pagat-magjistrateve-modeli
+cd pagat-magjistrateve-modeli
+git checkout v1.0
+```
+
 ## Instalimi
+
+Rezultatet u prodhuan me Python 3.13 dhe versionet e fiksuara në `requirements.txt`:
 
 ```bash
 python3 -m pip install -r requirements.txt

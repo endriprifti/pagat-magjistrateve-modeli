@@ -258,6 +258,9 @@ out("k", "W G2 15 vjet me R të rrumbullakuar 243.539", faktori_W("G2", 15) * 24
 out("k", "R26 e parrumbullakuar", R26)
 out("k", "Muaj me inflacion vjetor ≥ 4% radhazi, 3.2022–9.2023", 19)
 out("k", "Muaj me inflacion vjetor > 4% në atë periudhë", 18)
+# Detyrimi i Nenit 6, pika 2: hendeku shlyhet në vitin 2029 mbi tavanin vjetor (kryegjë)
+for emri, tavan, hendek in (("tavan 4 mld/vit", 4.0, 1.839449), ("tavan 3 mld/vit", 3.0, 4.839449)):
+    out("k", f"{emri}: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld)", tavan + hendek)
 
 # ---------------- grafiku: rrugët 2019–2026 ----------------
 graf = []

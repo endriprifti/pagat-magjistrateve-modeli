@@ -1,5 +1,6 @@
-numpy>=2.0
-scipy>=1.11
-pandas>=2.0
-openpyxl>=3.1
-matplotlib>=3.8
+# Versionet me të cilat u prodhuan rezultatet e punimit (Python 3.13)
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+openpyxl==3.1.5
+matplotlib==3.11.2
