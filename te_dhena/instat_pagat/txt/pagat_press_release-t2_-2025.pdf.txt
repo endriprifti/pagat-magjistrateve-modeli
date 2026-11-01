@@ -1,0 +1,188 @@
+Instituti i Statistikave    info@instat.gov.al
+Rr. Vllazën Huta,           www.instat.gov.al
+Ndërtesa 35, Hyrja 1        Tel: +355 4 2222 411
+Tiranë, Kodi Postar 1017    Faks: +355 4 2222 411
+
+
+
+
+Statistikat e Pagave
+Tremujori II, 2025
+Tiranë, 10 Shtator 2025: Gjatë tremujorit të dytë 2025, paga mesatare mujore bruto për një të
+punësuar me pagë në Shqipëri ishte 83.906 lekë, me një rritje prej 11,7 %, krahasuar me
+tremujorin e dytë 2024.
+
+
+Pagat sipas aktiviteteve ekonomike dhe profesioneve
+
+Aktivitetet ekonomike me pagë mesatare më të lartë se mesatarja kombëtare ishin:
+             - Aktivitetet Financiare dhe të Sigurimit,
+             - Informacioni dhe komunikacioni.
+
+          Ndryshimi i pagës mesatare krahasuar me tremujorin e dytë të vitit 2024:
+               • Rritja më e madhe e pagës, ishte në aktivitetin e Administratës publike, sigurimi
+                  social i detyrueshëm, arsimi, shëndetësia dhe aktivitetet e p unës sociale me një
+                  rritje prej 16,9 %.
+               • Rritja më e vogël ishte në Aktivitetet financiare dhe të sigurimit me rreth 5,3 %.
+
+Profesionet me pagë mesatare më të lartë se mesatarja kombëtare ishin:
+            - Menaxherë, Ligjvënës, Drejtorë ekzekutivë,
+            - Specialistë me arsim të lartë (profesionistë).
+
+          Ndryshimi i pagës mesatare krahasuar me tremujorin e dytë të vitit 2024:
+               • Rritja më e madhe e pagës, ishte në profesionin e Forcave të armatosura dhe
+                  Specialistë me arsim të lartë, me një rritje përkatësisht prej 23,2 % dhe 13,6 %.
+               • Rritja më e vogël ishte në profesionin e Menaxherë, Ligjvënës, Drejtorë
+                  ekzekutivë me rreth 8,8 %.
+
+Fig. 1 Paga mesatare mujore bruto për një të punësuar me pagë në Shqipëri (lekë) 1
+
+
+
+
+1
+ Shpërblimet dhe shtesat mbi pagë janë një pjesë e pagës mesatare mujore bruto për një të punësuar me pagë, të cilat në fund të çdo gjashtëmujori rrisin ndjeshëm
+pagën mesatare mujore bruto (shih shënimin metodologjik).
+
+Për t’u konsultuar me botime të tjera, vizitoni faqen e INSTAT: https://www.instat.gov.al/
+Faqe 2                                             Statistikat e Pagave                      Tremujori II, 2025
+
+
+
+
+Shpërndarja e të punësuarve sipas nivelit të pagës
+
+Sipas të dhënave, gjatë kësaj periudhe është vërejtur një ulje e numrit të punonjësve me pagë
+minimale dhe një rritje e numrit të punonjësve me paga më të larta. Shpërndarja aktuale është
+më e balancuar dhe më e përqendruar në kategoritë mesatare dhe të larta të pagës.
+
+Fig.2 Shpërndarja e të punësuarve me page sipas grupeve të pagës mesatare mujore bruto
+
+
+
+
+Për më shumë informacion dhe për të parë të dhënat e detajuara të tabelave, vizitoni bazën e të
+dhënave në faqen zyrtare të INSTAT: Statistikat e Pagave
+
+
+
+Për t’u konsultuar me botime të tjera, vizitoni faqen e INSTAT: https://www.instat.gov.al/
+Faqe 3                                             Statistikat e Pagave                      Tremujori II, 2025
+
+
+
+                                           Metodologjia
+Publikimi i të dhënave për pagat përmbajnë të dhëna të detajuara për nivelin e pagave ,
+shpërndarjes dhe ndryshimin e tyre përgjatë tremujorëve. Këto statistika ofrojnë një mundësi për
+të krahasuar pagat në industri të ndryshme dhe në grup-profesione të ndryshme. Statistikat mbi
+pagat janë gjithashtu të një rëndësie të veçantë për moni torimin e treguesve ekonomikë që
+përdoren nga politikë-bërësit, punëdhënësit dhe sindikatat për të vlerësuar kushtet e kërkesës
+dhe të ofertës për punë.
+
+Baza ligjore
+
+   •     Ligji Nr. 17/2018 për Statistikat Zyrtare;
+   •     Programi Kombëtar i Statistikave Zyrtare 2022-2026.
+   •     Memorandimi i Bashkëpunimit me Drejtorinë e Përgjithshme të Tatimeve
+
+
+Burimi i informacionit
+
+Burimi i të dhënave mbi pagat është Drejtoria e Pergjithshme e Tatimeve. Drejtoria e Përgjithshme
+e Tatimeve në bazë të memorandumit të bashkëpunimit i dër gon INSTAT-it, të dhënat nga
+Listëpagesa (E- SIG 025).
+ Ky formular shërben për deklarimin e tre llojeve të detyrimeve tatimore :
+   • Të Kontributeve të Sigurimeve Shoqërore,
+   • Të Kontributeve të Sigurimeve Shëndetësore,
+   • Të Ardhurave nga Punësimi për punëmarrësit.
+Variablat e skedarit janë tre lloje: variablat e skedarit origjinal nga DPT, variabla shtesë nga
+INSTAT dhe variabla të derivuar. Dy variablat kryesorë të interesit në këtë skedar janë Numri i
+punonjësve dhe Paga bruto paguar punëmarrësit.
+
+
+Përkufizime
+
+Paga mesatare mujore - Në llogaritjen e pagës mesatare mujore bruto përfshihen vetëm numri i
+të punësuarve kontribues me pagë të cilët punojnë 18 apo më shumë ditë gjatë muajit referencë.
+Këta kontribues i përkasin të gjithë aktiviteteve ekono mike përfshi dhe aktivitetin e Bujqësisë,
+pyjeve dhe peshkimit që deklarohen në Drejtorinë e Përgjithshme të Tatimeve.
+Paga mesatare mujore bruto përbëhet nga:
+  • Shtesa mbi pagë për funksione drejtuese,
+  • Shtesa mbi pagë për vjetërsi në punë,
+  • Shtesa mbi pagë për vështirësi në punë,
+  • Shtesa të tjera të rregullta (tituj, grada etj.) ,
+  • Shpërblime
+Në pagën mesatare mujore bruto nuk zbriten kontributet personale dhe tatimi mbi të ardhurat.
+
+Mediana e pagës mujore bruto - është paga mesatare mujore në mes të shpërndarj es së pagave.
+
+Paga reale - është paga nominale e rregulluar me nivelin e ndryshimit të çmimeve.
+
+Paga minimale mujore - është paga më e ulët e miratuar me vendim të Këshillit të Ministrave.
+
+Kontribues me pagë në sektorin e Bujqësisë, pyjeve dhe peshkimit - konsiderohen të gjithë të
+punësuarit me pagë të deklaruar nga fermat/ndërmarrjet bujqësore të rregjistruara në Drejtorinë
+e Përgjithshme të Tatimeve.
+
+
+
+Për t’u konsultuar me botime të tjera, vizitoni faqen e INSTAT: https://www.instat.gov.al/
+Faqe 4                                              Statistikat e Pagave                             Tremujori II, 2025
+
+
+
+
+ Klasifikime
+   • Klasifikimi i ndërmarrjeve është bërë sipas Nomenklaturës së Veprimtarive Ekonomike,
+       NVE Rev. 2, si më poshtë:
+
+              NVE Rev.2       Përshkrimi
+              (Seksioni)
+                  A           Bujqësia, pyjet, peshkimi
+                  B           Industria nxjerrëse
+                  C           Përpunimi
+                  D           Energjia elektrike, furnizimi me gaz, avull dhe ajër i kondicionuar
+                  E           Furnizimi me ujë, aktivitete tëtrajtimit dhe menaxhimit të mbeturinave, mbetjeve
+                      F       Ndërtimi
+                  G           Tregtia me shumicë dhe me pakicë; Riparimi i automjeteve dhe motoçikletave
+                  H           Transporti dhe magazinimi
+                      I       Akomidimi dhe shërbimi ushqimor
+                      J       Informacioni dhe komunikacioni
+                  K           Aktivitete financiare dhe të sigurimit
+                      L       Aktivitete të pasurive të paluajtëshme
+                  M           Aktivitete profesionale, shkencore dhe teknike
+                  N           Shërbime administrative dhe mbështetëse
+                  O           Administrimi publik dhe mbrojtja; Sigurimi social i detyrueshëm
+                  P           Arsimi
+                  Q           Shëndetsia dhe aktivitete tëpunës sociale
+                  R           Arte, argëtim dhe çlodhje
+                  S           Aktivitete të tjera shërbimi
+                      T       Aktivitetet të familjeve si punëdhënës; Aktivitete të prodhimit të mallrave e shërbmeve tw
+                              pandryshueshme të familjeve për përdorimin e vet
+                  U           Aktivitete të organizatave dhe organizmave ndërkombëtare
+
+
+
+
+     •    Klasifikimi i profesioneve është bërë sipas Klasifikimit Ndërkombëtar të Profesioneve,
+          ISCO-08, si më poshtë:
+
+              ISCO_08       Përshkrimi
+
+                 1.         Manaxher
+
+                 2.        Specialistë me arsim të lartë (profesionistë)
+                 3.        Teknikë dhe specialistë në zbatim
+                 4.        Nëpunësit
+                 5.        Punonjës të shitjeve dhe të shërbimeve
+                 6.        Punonjës të kualifikuar të bujqësisë pyjeve dhe peshkimit
+                 7.        Zejtarë, artizanë dhe profesione të lidhura me to
+                 8.        Punonjës të montimit dhe përdorimit të makinerive dhe pajisjeve
+                 9.        Punëtorë (Profesione elementare)
+                 0.        Forcat e Armatosura
+
+
+
+
+Për t’u konsultuar me botime të tjera, vizitoni faqen e INSTAT: https://www.instat.gov.al/
+

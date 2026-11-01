@@ -1,0 +1,452 @@
+## V. PAKETA E PROPOZUAR
+
+Paketa e propozuar përbëhet nga tetë elemente, të cilat ndërtohen veçmas, por në mënyrë të bashkërenduar, sepse secili prej tyre i përgjigjet një kërkese të ndryshme të Vendimit me №15/2026, ndërkohë që të gjithë përdorin të njëjtat simbole, të njëjtat seri statistikore dhe të njëjtën bazë. Paketa, në tërësi, është rekomandim (e), ndërsa elementet e saj që janë zgjedhje e ligjvënësit, dhe jo rezultat i modelit, shënohen si të tilla.
+
+### 1. Baza e riparuar
+
+Baza e riparuar është **R*_0 = 231.000 lekë** në muaj bruto, nga 1.4.2023, pra paga për pozicion e klasës I-2 të Vendimit me №325/2023 (217.000 lekë), plus paga në grup prej 14.000 lekësh. Arsyetimi i saj, si dhe varianti me bazë 219.888 lekë, u paraqitën në Kreun IV. Këtu mjafton të shtohet se, në ligj, baza duhet të shkruhet si shumë e caktuar në lekë, dhe jo si referencë dinamike te një vendim i Këshillit të Ministrave. Kështu, baza mbetet e paprekshme nga riklasifikimet e ardhshme të nëpunësve civilë, gjë që i përgjigjet njëkohësisht kërkesës K2 dhe pikës (iii) të mendimit të pakicës.
+
+### 2. Formula afatgjatë: maksimumi i niveleve dhe jo i normave
+
+Gjatë analizës u vërejt se rregulli « maksimumi ndërmjet inflacionit dhe rritjes së referencës », nëse zbatohet në çdo rishikim mbi pagën e rishikimit të mëparshëm, krijon një efekt « çikriku »: ai merr herë rritjen e njërës seri, herë të tjetrës, dhe paga del mbi të dyja seritë. Për këtë arsye, paketa i krahason nivelet kumulative që nga baza, dhe jo normat periodike, me të njëjtën formulë të Kreut III:
+
+$$ R_t = max{ R_{t−1} ;  R*_0 · max( I(τ − 1) / I(3.2023) ;  Ref_t / Ref_0 ) } ,   R*_0 = Ref_0 = 231.000
+
+ku Ref_t është paga për pozicion e klasës I-2, ose e pasardhëses së saj funksionale, plus paga në grup të diplomës së nivelit të parë, ndërsa τ është data e fundit e rishikimit. Komponenti i referencës vepron menjëherë, sapo ndryshon rrjeta civile, ndërsa komponenti i inflacionit vepron vetëm në datat e rishikimit. Me të dhënat e verifikuara, më 1.1.2026, faktori i inflacionit ishte 1,05428 dhe ai i referencës 1,02349, prandaj R = 231.000 × 1,05428 = 243.539 lekë.
+
+### 3. Rregullat e indeksimit
+
+Rregullat teknike të indeksimit, të cilat zakonisht lihen në heshtje dhe, pikërisht për këtë arsye, bëhen burim kontestimi, duhen përcaktuar në ligj. Tabela 10 i përmbledh ato.
+
+| Elementi | Rregulli i propozuar | Arsyeja |
+|---|---|---|
+| Datat e rishikimit | 1 janari i çdo viti çift (2028, 2030, …) | Ruan frekuencën ≤ 2 vjet që Gjykata e vlerësoi (§ 106) |
+| Rishikimi i jashtëzakonshëm | Në muajin pas atij kur, njëkohësisht, inflacioni kumulativ nga matja e fundit kalon 4% dhe inflacioni vjetor kalon objektivin e Bankës së Shqipërisë me më shumë se 1 pikë përqindjeje | Pragu i vetë Ligjit №95/2026, i përdorur si shkas dhe jo si tavan; aktivizohet vetëm në episode inflacioni |
+| Burimi | IÇK kombëtar total i INSTAT-it; INSTAT-i vërteton raportin e indeksit | § 84 i referohet IÇK-së; inflacioni bazë është tregues i politikës monetare |
+| Vintazhi | Të dyja vlerat nga i njëjti botim, më i fundit | Rishikimet statistikore përthithen në rishikimin pasardhës |
+| Rrumbullakimi | R llogaritet me saktësi të plotë dhe paguhet në lekë të plota | Shmang zhvendosjen kumulative |
+| Publikimi | Ministria e Financave publikon R brenda datës 15 të muajit të rishikimit dhe brenda 15 ditëve nga çdo ndryshim i referencës, me akt deklarativ | K18: automatizëm, pa diskrecion |
+| Mungesa e publikimit | Thesari dhe institucionet paguese e zbatojnë formulën drejtpërdrejt; pagesa është shpenzim i detyrueshëm | K18: asnjë mjet presioni |
+| Ndryshimi i referencës | Klasa I-2 emërtohet në ligj; pasardhësja përcaktohet me procedurë të kontrollueshme gjyqësisht; nëse referenca ulet, R nuk ulet | V35, § 84; kufizimi C3 |
+| Korrigjimi i gabimeve | Me kërkesë të çdo institucioni ose magjistrati; tepricat kompensohen vetëm me rritjet e ardhshme | Siguri juridike; asnjë mbajtje nga paga |
+
+*Tabela 10. Rregullat e indeksimit.*
+
+Efektet kumulative të çdo operatori u testuan me kod, në rrugë të stilizuara (d). Kur inflacioni dhe referenca alternojnë, « maksimumi periodik » i kalon të dyja seritë me 3,92% pas dy rishikimeve dhe me 8,00% pas katër rishikimeve, gjë që përbën një numërim të dyfishtë të fshehtë. Mesatarja e dy serive humbet gjithmonë kundrejt njërës prej tyre. Tavani prej 4%, në një episod inflacioni si ai i viteve 2022–2023, humbet 7,14% të vlerës reale. Rrumbullakimi lart në 100 lekë mbi bazë të rrumbullakuar e zhvendos R me 504 lekë në dhjetë rishikime, ndërsa rregulli i paketës më pak se 1 lek. Së fundmi, nëse një vlerë e indeksit rishikohet me 0,2 pikë, metoda periodike me botime të përziera humbet 0,20%, ndërsa rregulli i niveleve nuk humbet asgjë.[[fn: Llogaritja: faza2c_paketa.py; rezultatet në faza2c_testet_kumulative.csv dhe faza2c_rezultatet.csv.]]
+
+Shkasi i rishikimit të jashtëzakonshëm kërkon një shpjegim të veçantë, sepse versioni i tij më i thjeshtë, pra rishikimi sa herë që inflacioni kumulativ kalon 4%, rezultoi i papërshtatshëm. Me inflacion 3% në vit, i cili është vetë objektivi i Bankës së Shqipërisë,[[fn: Banka e Shqipërisë, « Raporti tremujor i politikës monetare », 2025/I–2026/III. Ligji me №95/2026 e cakton tavanin e indeksimit si « një pikë përqindjeje mbi nivelin e targetuar të inflacionit nga Banka e Shqipërisë », ndërsa asnjëri prej raporteve nuk përmban një brez tolerance rreth objektivit. Pragu është, pra, zgjedhje e ligjvënësit, e ankoruar te objektivi. Inflacioni bazë nuk përdoret, sepse është tregues i politikës monetare dhe jo i kostos së jetesës; shih Banka e Shqipërisë, Çeliku, E., « Përmbledhës metodologjik mbi matje të inflacionit bazë në Shqipëri », dhjetor 2024.]] ai aktivizohet tri herë brenda gjashtë vjetëve, sepse kumulativi kalon 4% para çdo rishikimi dyvjeçar, dhe e kthen, në fakt, indeksimin dyvjeçar në indeksim pothuajse vjetor. Prandaj, paketa kërkon që, përveç kumulativit, edhe inflacioni vjetor ta kalojë objektivin me më shumë se një pikë përqindjeje, pra pragun e vetë Ligjit me №95/2026.
+
+| Skenari i inflacionit (d) | Shkasi i thjeshtë: aktivizime / humbja maks. / kosto | Shkasi i propozuar: aktivizime / humbja maks. / kosto | Pa shkas: humbja maks. |
+|---|---|---|---|
+| 3% në vit (objektivi) | 3 / −3,95% / 0,99 | 0 / −5,82% / 0 | −5,82% |
+| Episod si 2022–2023 | 4 / −4,23% / 1,47 | 2 / −5,74% / 1,00 | −9,09% |
+| 4,5% në vit | 5 / −4,17% / 1,77 | 5 / −5,57% / 1,69 | −8,43% |
+| 5% në vit | 6 / −4,01% / 2,15 | 5 / −5,56% / 2,06 | −9,30% |
+| Historik, IÇK reale 2019–2026 | 5 / −4,15% / — | 1 (4.2022) / −8,13% / — | −9,72% |
+
+*Tabela 10a. Shkasi i rishikimit të jashtëzakonshëm, 2026–2031. Kostoja shtesë në miliardë lekë, N_R = 3.954. Llogaritja: faza3_rishikim.py, seksioni (c).*
+
+Me shkasin e propozuar, humbja maksimale e vlerës reale brenda ciklit mbahet rreth 6% në çdo skenar të stilizuar, pa asnjë kosto shtesë kur inflacioni është në objektiv, ndërsa në një episod si ai i viteve 2022–2023 ajo bie nga 9,09% në 5,74%. Mbrojtja është, pra, e vazhdueshme dhe e kufizuar, dhe jo e plotë në çdo muaj. Kjo është zgjedhje e studimit (e), e mbështetur te formulimi i Gjykatës, i cili kërkon që të shmangen « vonesa e zgjatur e rishikimit » dhe « gërryerja e ndjeshme e vlerës reale »,[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, § 83.]] dhe jo ruajtja e saj në çdo moment.
+
+### 4. Korrigjimi periodik
+
+Gjykata është e qartë se « ligjvënësi ka detyrimin për të përshtatur pagën me zhvillimin e kushteve të përgjithshme ekonomike të vendit, në një periudhë kohore të caktuar dhe në raport edhe me zhvillimin e pagave të referencës ashtu edhe të funksionarëve të tjerë publikë », dhe se, kur kushtet ekonomike sjellin rritje të përgjithshme të pagave, « edhe magjistratët duhet të përfitojnë proporcionalisht me kategoritë e tjera ».[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, §§ 102 dhe 104; pakica e kundërshton këtë si detyrim pozitiv rritjeje (mendimi i pakicës, §§ 9–11).]] Indeksimi, megjithatë, mbron vetëm vlerën reale dhe lidhjen me referencën. Të dhënat e Tabelës 3b tregojnë pse kjo nuk mjafton: nga viti 2019, paga mesatare bruto në ekonomi u rrit 74,0%, ndërsa paketa e propozuar 69,36% dhe Ligji me №95/2026 vetëm 15,12%. Nga viti 2023, paga mesatare u rrit 29,21%, ndërsa R e paketës 5,43% dhe paga e klasës I-2 vetëm 2,50%.
+
+Për këtë arsye, propozohet (e) një raport dyvjeçar, i pari në vitin 2028, në të cilin INSTAT-i dhe Ministria e Financave krahasojnë R me pagën mesatare bruto në ekonomi dhe me pagën mesatare në sektorin shtetëror. Nëse, në pesë vjetët e fundit, rritja e R mbetet pas njërit prej këtyre treguesve me më shumë se 5 pikë përqindjeje, Kuvendi, pas konsultimit me Këshillat, detyrohet të vendosë me vendim të arsyetuar nëse jep një rritje reale shtesë. Pragu prej 5% është zgjedhje e studimit, e frymëzuar nga parametrat që Gjykata Kushtetuese Federale gjermane ka përdorur për pagat e gjyqtarëve, ku një diferencë prej të paktën 5% ndaj treguesve të tillë si pagat në shërbimin publik, indeksi i pagave nominale dhe indeksi i çmimeve shërben si tregues për një shqyrtim më të thellë.[[fn: Bundesverfassungsgericht, vendimi 2 BvL 17/09 e të tjera, datë 5.5.2015, i cili përdor një sistem parametrash krahasues për periudha pesëmbëdhjetëvjeçare. Referimi është vetëm krahasues dhe nuk përbën standard të detyrueshëm në rendin tonë juridik.]] Korrigjimi nuk është automatik, sepse ky vendim, në thelb, është politik; ai matet mbi rrugën e indeksuar, në mënyrë që të mos numërohet dy herë inflacioni, dhe nuk mund të jetë negativ. Detyrimi që krijohet është procedural: Kuvendi nuk detyrohet të japë rritje, por detyrohet të shprehet me arsye.
+
+### 5. Paga totale dhe kategoritë e lidhura
+
+Paga totale mbetet W = ω · R, me koeficientët e Ligjit me №96/2016 të pandryshuar, prandaj raportet e hierarkisë mbeten konstante. Kështu, paga e një gjyqtari të shkallës së dytë me 15 vjet vjetërsi mbetet 1,20 herë, dhe ajo e një gjyqtari të shkallës së tretë me 25 vjet vjetërsi 1,35 herë, paga e një gjyqtari të shkallës së parë pa vjetërsi. Pabarazitë brenda Gjykatës së Lartë, të cilat Gjykata ia rekomandon ligjvënësit « për t'u konsideruar », kërkojnë një ndërhyrje të veçantë në koeficientët, dhe jo në R.[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, § 111.]]
+
+Neni 12/1 i Ligjit me №96/2016, i shtuar me Ligjin me №95/2026, e kufizon efektin e ndryshimit të R vetëm te gjyqtarët, prokurorët dhe anëtarët e Gjykatës Kushtetuese, ndërsa për « të gjithë funksionarët dhe nëpunësit e tjerë publikë », pagat e të cilëve referojnë te paga e gjyqtarit ose prokurorit, e ngrin R në vlerën « përpara hyrjes në fuqi të vendimit nr. 15 ». Meqenëse vendimi hyri në fuqi me botimin e tij, më 17.4.2026, kur R e paguar ishte 156.825 lekë, kjo është vlera e ngrirjes (b), dhe jo 153.000 lekë. Statusi i anëtarëve të Këshillave, i Inspektorit të Lartë të Drejtësisë dhe i inspektorëve magjistratë mbetet i diskutueshëm: sipas Ligjit me №115/2016, ata marrin pagën e gjyqtarit ose, për kryetarët e Këshillave, të Kryetarit të Gjykatës së Lartë, ose pagën e gjyqtarit të apelit, dhe Këshilli i Lartë i Prokurorisë e trajton anëtarin e vet si magjistrat, por, sipas tekstit literal të Nenit 12/1, ata bien te « funksionarët e tjerë ». Rekomandohet (e), prandaj, që ligji ta zgjidhë shprehimisht këtë pyetje: funksionarët që gëzojnë statusin e magjistratit gjatë mandatit ndjekin R e re, ndërsa për kategoritë e tjera shkëputja ruhet, por ngrirja nominale zëvendësohet me rregullin e indeksimit të kategorisë së tyre, në mënyrë që të mos krijohet një erozion i ri, pa afat.
+
+Pensioni shtetëror suplementar ndjek, gjithashtu, pagën e muajit të fundit, prandaj është linear në R: për çdo 1 lek rritje të R, ai rritet 0,93 lekë për një magjistrat të shkallës së dytë me 25 vjet shërbim, 0,96 lekë për një gjyqtar të shkallës së parë me 30 vjet shërbim dhe 1,28 lekë për një gjyqtar të Gjykatës së Lartë me 9 vjet në atë gjykatë. Kështu, për magjistratin e shkallës së dytë me 25 vjet shërbim, pensioni do të ishte 226.491 lekë në muaj me paketën, kundrejt 153.950 lekësh me Ligjin me №95/2026, ndërsa për gjyqtarin e Gjykatës së Lartë 311.729 kundrejt 211.888 lekësh.[[fn: Ligji me №8097, datë 21.3.1996, « Për pensionet shtetërore suplementare të personave që kryejnë funksione kushtetuese dhe të punonjësve të shtetit », i amenduar, Nenet 1 § 7, 9 dhe 11. Llogaritja: faza2_burimet_shtese.py dhe faza3_rishikim.py, seksioni (j).]] Kostoja agregate nuk mund të llogaritet pa numrin e përfituesve, por efekti është proporcional me R në të gjitha alternativat, prandaj renditja e tyre nuk ndryshon. Duhet shënuar se teksti i konsoliduar i këtij ligji përmban ende Nenin 1 § 7, paragrafi i dytë, shkronjat « a »–« c », përfshirë kufirin sipas të cilit « në asnjë rast kjo pagë referuese nuk e tejkalon pagën e Presidentit të Republikës », ndonëse Vendimi me №35/2022 i shfuqizoi këto shkronja.[[fn: Vendimi i Gjykatës Kushtetuese me №35/2022, dispozitivi, pika 3.]] Prandaj, duhet verifikuar nëse ky kufi zbatohet ende në praktikë.
+
+### 6. Prapambetjet
+
+Për prapambetjet, studimi dallon qartë ekzistencën dhe masën e së drejtës, e cila rrjedh nga § 110 (a), nga kalendari i pagesës, i cili është zgjedhje e ligjvënësit (e). E drejta lind me ligj, me efekt nga 1.4.2023, dhe masa e saj për çdo magjistrat është ω · Σ (R_paketës − R_paguar), për çdo muaj deri në hyrjen në fuqi. Për sistemin, nëse paketa hyn në fuqi më 1.1.2027 (d), detyrimi është **13,84 miliardë lekë** (10,50–17,16 sipas N_R), për 45 muaj. Kalendari ndryshon vetëm kohën e pagesës, dhe jo masën e saj.
+
+Për magjistratin individual, masa e së drejtës varet vetëm nga profili i tij, sepse ω është konstant. Tabela 11 e paraqet atë për katër profilet standarde.
+
+| Profili | ω | Prapambetja 4.2023–7.2026 | Prapambetja 4.2023–12.2026 |
+|---|---|---|---|
+| Gjyqtar G1, 5 vjet | 2,00 | 6.361.991 | 7.000.227 |
+| Gjyqtar G2, 15 vjet | 2,28 | 7.252.669 | 7.980.259 |
+| Kryetar G3, 25 vjet | 2,766 | 8.798.633 | 9.681.314 |
+| GJKKO, shkalla e parë, 10 vjet | 3,764 | 11.973.267 | 13.174.427 |
+
+*Tabela 11. Prapambetja bruto për magjistrat, në lekë, pa kompensimin për inflacionin. Llogaritja: faza3_prapambetje_individuale.csv.*
+
+Llogaritja supozon (d) se paga e gushtit 2026 u pagua me 236.425 lekë për të gjithë magjistratët. Në fakt, kjo vlen vetëm për institucionet që paguan me vendim gjyqësor (Kreu II, § 5), prandaj, për magjistratët e tjerë, prapambetja e gushtit është më e madhe se sa tregohet këtu, ndërsa detyrimi i sistemit është pak i nënvlerësuar.
+
+Kalendari u ndërtua me programim linear. Variablat janë shumat e çdo muaji detyrimi që paguhen në vitet 2027, 2028 dhe 2029. Kufizimet janë katër: (i) çdo detyrim shlyhet plotësisht ose shfaqet si « hendek », pa u ulur; (ii) pagesa vjetore e kryegjësë nuk e kalon tavanin buxhetor; (iii) çdo vit ka të paktën 10% të totalit; dhe (iv) muaji më i vjetër nuk mund të jetë i paguar në përqindje më të vogël se muaji pasardhës. Objektivi, i shprehur me fjalë të thjeshta, është që çdo lek i papaguar të « kushtojë » sa katrori i muajve që pret, në mënyrë që modeli të preferojë pagimin e detyrimeve më të vjetra dhe të shmangë pritjet shumë të gjata. Zgjidhja që del është, në fakt, rregulli i thjeshtë « së pari muajt më të vjetër », prandaj ligji mund ta shprehë kalendarin me këtë rregull, pa iu referuar modelit.
+
+| Tavani vjetor | 2027 | 2028 | 2029 | Hendeku | Vonesa mesatare (muaj) | Kompensimi IÇK |
+|---|---|---|---|---|---|---|
+| 5 mld lekë (bazë) | 5,00 | 5,00 | 3,84 | 0 | 40,11 | 1,32 |
+| 4 mld lekë | 4,00 | 4,00 | 4,00 | 1,84 | 41,12 | 1,18 |
+| 7 mld lekë | 7,00 | 5,46 | 1,38 | 0 | 36,25 | 1,18 |
+| Fondet e kërkuara nga KLGJ: 2027–2028, 5 mld lekë | 5,00 | 5,00 | — | 3,84 | 35,12 | 0,82 |
+
+*Tabela 12. Kalendari i kryegjësë së prapambetjeve, në miliardë lekë. Llogaritja: faza2c_lp.py, faza2c_lp_skenaret.csv.*
+
+Në skenarin bazë, viti 2027 shlyen plotësisht muajt 4.2023–7.2024. Edhe sikur gjithçka të paguhej në mes të vitit 2027, vonesa mesatare do të ishte 29,12 muaj, sepse vetë detyrimi nis në vitin 2023. Vendimi me №435/2026 i Këshillit të Lartë Gjyqësor nuk përcakton një kalendar pagese, por kërkon fondet përkatëse për vitet 2027 dhe 2028; një shtrirje e tillë, me 5 miliardë lekë në vit, do të linte një hendek prej 3,84 miliardë lekësh.
+
+Gjykata e lejon shtyrjen e pagesës, duke kërkuar « një skemë të arsyeshme përshtatjeje », por mbrojtja nga inflacioni vlen edhe për prapambetjen, sepse një lek i vitit 2023, i paguar në vitin 2029, ka humbur vlerë. Rekomandohet (e), prandaj, që çdo pagesë e shtyrë të indeksohet me IÇK nga muaji i detyrimit deri në muajin e pagesës. Kjo nuk është interes tregtar, por ruajtje e vlerës reale, dhe kushton 1,32 miliardë lekë, pra 9,57% të detyrimit. Meqenëse tavani zbatohet mbi kryegjënë, pagesa vjetore në para është më e lartë: 5,48 miliardë lekë në vitin 2027, 5,49 në vitin 2028 dhe 4,20 në vitin 2029. Për gjyqtarin e shkallës së dytë me 15 vjet vjetërsi, kalendari bazë jep këstet bruto prej 2.883.156 lekësh në vitin 2027, po aq në vitin 2028 dhe 2.213.946 lekësh në vitin 2029, me një kompensim gjithsej prej 763.960 lekësh.[[fn: Llogaritja: faza3_rishikim.py, seksioni (f), me inflacion 3% në vit pas gushtit 2026 (d).]] Trajtimi tatimor i këtyre pagesave, pra nëse ato tatohen sipas vitit të detyrimit apo sipas vitit të pagesës, me pasoja në shkallët progresive, mbetet çështje e hapur që ligji duhet ta zgjidhë shprehimisht. Paga e gushtit 2026, e paguar me vendim gjyqësor, llogaritet në të gjithë skenarët si paradhënie ndaj detyrimit të paketës dhe nuk kthehet, sepse paketa është gjithmonë më e lartë, ndërsa kthimi do të përbënte vetë një ulje.
+
+### 7. Rregullat kalimtare dhe detyrimet e trashëguara
+
+Paketa zëvendëson dispozitën e Ligjit me №95/2026 për R, me efekt nga 1.4.2023. Në këtë mënyrë, periudha 31.7–18.9.2026 mbulohet nga ligji i ri, dhe vakumi mbyllet pa marrë anë në kontestin e kompetencës ndërmjet skenarëve. Shumat e paguara sipas akteve të Këshillave ose vendimeve gjyqësore njihen si paradhënie. Meqenëse paketa jep në çdo muaj të paktën sa Këshillat, asnjë akt i tyre nuk « ulet » nga ligji. Kontestimet në proces për diferenca page nga 1.4.2023 zgjidhen nga kalendari, i cili krijon të drejtë ekzekutimi për çdo këst të papaguar në afat. Një dispozitë e veçantë duhet ta konsiderojë të kryer rishikimin e 1.1.2026, sepse, përndryshe, formula, e cila e aktivizon komponentin e inflacionit vetëm në datat e rishikimit, do të jepte për vitin 2026 vetëm 236.425 lekë.
+
+Diferencat sipas Vendimit me №35/2022 për periudhën 1.2019–3.2023 mbeten jashtë paketës, sepse lidhen me një formulë tjetër dhe me një vendim tjetër. Madhësia e tyre, megjithatë, nuk është e papërfillshme. Nëse diferenca ndërmjet standardit të Vendimit me №35/2022 dhe 118.100 lekëve shumëzohet me njësitë-R, ajo arrin 1.364.100 lekë për njësi-R në 51 muaj, pra 4,09–6,69 miliardë lekë bruto, ose 3,09–5,69 miliardë lekë pasi zbritet 1 miliard lekë i paguar me Vendimin me №755/2023 (d). Ky vlerësim supozon se deri në mars 2023 u pagua 118.100 lekë. Nëse, përkundrazi, nga tetori 2022 u pagua 126.300 lekë dhe nga janari 2023, pas hyrjes në fuqi të Vendimit me №35/2022, 152.700 lekë, shuma bie në 1.235.700 lekë për njësi-R, pra 3,71–6,06 miliardë lekë bruto, ose 2,71–5,06 miliardë lekë pas zbritjes.[[fn: Llogaritja: faza3_rishikim.py, seksioni (e). Vlerësimi është kufi i sipërm, sepse njësitë-R të vitit 2026 përfshijnë kategori dhe pozicione që mund të mos kenë ekzistuar në periudhën 2019–2023, ndërsa pagesat e tjera të kryera me vendime gjyqësore individuale nuk njihen.]] Rekomandohet (e), prandaj, inventarizimi i tyre nga Ministria e Financave dhe Këshillat brenda gjashtë muajve, si dhe paraqitja e një plani të veçantë shlyerjeje.
+
+### 8. Mekanizmi i jashtëzakonshëm i Nenit 138, shkronja « a »
+
+Në paketë, ky është i vetmi vend ku indeksimi mund të kufizohet (e). Gjykata i ka përcaktuar kushtet në mënyrë kumulative,[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, §§ 78–81.]] dhe studimi i përkthen ato në teste të kontrollueshme:
+
+| Kushti sipas § 81 | Testi në ligj |
+|---|---|
+| i. Masë e përgjithshme, jo e shënjestruar | E njëjta masë, ose më e rreptë, zbatohet për të gjitha pagat buxhetore, përfshirë kategorinë referuese dhe funksionarët politikë; ulja e vlerës reale të pagës së magjistratëve nuk e kalon atë të kategorive të tjera |
+| ii. Arsyetim legjitim | Ligj i veçantë, me të dhëna fiskale të publikuara dhe vlerësim të alternativave |
+| iii. Rregulla objektive, të barabarta dhe të paracaktuara | Kriteret dhe të dhënat janë publike dhe të njëjta për të gjitha kategoritë |
+| iv. Proporcionale | Pezullohet vetëm komponenti i indeksimit në një rishikim; R nominale nuk ulet kurrë |
+| v. Pa cenuar dinjitetin e funksionit | R nuk bie kurrë nën vlerën reale të 152.700 lekëve të shtatorit 2022; konsultim paraprak me Këshillat |
+| vi. E kufizuar në kohë | Maksimumi 2 vjet; në rishikimin pasardhës, formula e niveleve e rikthen R në nivelin e plotë |
+
+*Tabela 13. Kushtet e mekanizmit të jashtëzakonshëm.*
+
+Testi i stilizuar (d), me pezullim të rishikimit të vitit 2028, me inflacion 4% në vit dhe me referencë të ngrirë, tregon se gjatë viteve 2028–2029 R mbetet 7,54% nën vlerën reale, ndërsa nga viti 2030 rregulli i niveleve e rikthen atë plotësisht. Kursimi buxhetor është 1,89 miliardë lekë. Pa rikuperim, humbja prej 7,54% do të bëhej e përhershme, pra një ulje e pakufizuar në kohë, në kundërshtim me kushtin (vi). Rikuperimi është i nivelit dhe jo i të ardhurave: muajt e pezullimit nuk kompensohen, sepse pikërisht ky është kontributi që Kushtetuta i lejon shtetit t'u kërkojë magjistratëve në kohë krize.
+
+Dy kufizime duhen pranuar. Së pari, mekanizmi i shkruar në një ligj të zakonshëm e detyron ligjvënësin vetëm politikisht, sepse një ligj i mëvonshëm mund ta shmangë atë; ajo që e detyron juridikisht është vetë Neni 138, të cilin mekanizmi thjesht e bën të lexueshëm. Dobia e tij qëndron te fakti se ai e bën të dukshme dhe të matshme çdo shmangie. Së dyti, testi i kushtit (i) është i vështirë për t'u zbatuar kur masat ndaj kategorive të tjera janë të ndryshme në formë, prandaj ai matet me ndryshimin e vlerës reale të pagës, dhe jo me formën e masës. Kjo qasje përputhet me jurisprudencën e Gjykatës së Drejtësisë së Bashkimit Evropian, e cila ka pranuar se uljet e përkohshme të pagave të gjyqtarëve, si pjesë e masave të përgjithshme për kufizimin e shpenzimeve publike, nuk e cenojnë vetvetiu pavarësinë gjyqësore.[[fn: Gjykata e Drejtësisë e Bashkimit Evropian, çështja C-64/16, Associação Sindical dos Juízes Portugueses, datë 27.2.2018, §§ 46–52. Referimi është vetëm krahasues.]] Mekanizmi, pra, i jep shtetit një mjet real për kohë krize, pa e kthyer atë në një mjet presioni ndaj gjyqësorit.
+
+## VI. ANALIZA FISKALE DHE TESTIMET
+
+### 1. Kostoja për periudhën 2027–2031
+
+Horizonti pesëvjeçar mbulon dy rishikime të rregullta, gjithë kalendarin e prapambetjeve dhe dy vite pas tij. Kostoja ndahet në (a) të përhershme, pra diferencën vjetore ndaj Ligjit me №95/2026, (b) kalimtare, pra pagesat e prapambetjeve dhe kompensimin e tyre, dhe (c) detyrimet historike, pra stokun prej 13,84 miliardë lekësh. Krahasuesi duhet përcaktuar qartë, sepse Ligji me №95/2026 nuk ka një rrugë të caktuar: R e tij ndjek pagën e Presidentit, e cila indeksohet me vendim të Këshillit të Ministrave. Studimi supozon (d) se paga e Presidentit indeksohet çdo vit me normën e rritjes së referencës civile, brenda tavanit prej 4%, ashtu siç ndodhi në vitin 2026.
+
+| Viti | R paketa | R L95 | E përhershme | Kalimtare | Totali | % e zërit « Paga » 2026 |
+|---|---|---|---|---|---|---|
+| 2027 | 243.539 | 169.676 | 3,50 | 5,48 | 8,99 | 7,5% |
+| 2028 | 258.596 | 173.918 | 4,02 | 5,49 | 9,50 | 7,9% |
+| 2029 | 258.596 | 178.266 | 3,81 | 4,20 | 8,01 | 6,7% |
+| 2030 | 274.344 | 182.722 | 4,35 | 0 | 4,35 | 3,6% |
+| 2031 | 274.344 | 187.290 | 4,13 | 0 | 4,13 | 3,4% |
+| 2027–2031 | | | 19,81 | 15,16 | 34,98 | |
+
+*Tabela 14. Skenari qendror (inflacion 3%, rritje e referencës 2,5%, N_R = 3.954, pa kontribute), kostot bruto në miliardë lekë. Llogaritja: faza2d_testet.py, faza2d_fiskale_grid.csv.*
+
+Me inflacion 3%, shkasi i jashtëzakonshëm nuk aktivizohet, prandaj Tabela 14 nuk ndryshon prej tij. Në skenarët me inflacion më të lartë, ai shton 1,00 miliard lekë gjatë viteve 2026–2031 në një episod si ai i viteve 2022–2023, 1,69 miliardë me inflacion 4,5% në vit dhe 2,06 miliardë me inflacion 5% në vit (Tabela 10a). Meqenëse rregulli është i niveleve, rishikimi i jashtëzakonshëm nuk e ngre nivelin në rishikimet e rregullta, por vetëm e sjell më herët një pjesë të rritjes.
+
+| Viti | Totali minimal | Totali maksimal | Pjesa maksimale e zërit « Paga » 2026 |
+|---|---|---|---|
+| 2027 | 8,07 | 11,86 | 9,9% |
+| 2028 | 7,61 | 13,51 | 11,2% |
+| 2029 | 3,88 | 13,60 | 11,3% |
+| 2030 | 2,98 | 8,71 | 7,2% |
+| 2031 | 2,82 | 8,71 | 7,2% |
+
+*Tabela 14a. Gama e kostos totale vjetore mbi 72 kombinime skenarësh, në miliardë lekë.*
+
+Mbi 72 kombinime skenarësh, me inflacion 2–5%, rritje të referencës 0–5%, N_R 3.000–4.902 dhe kontribute 0–16,6%, kostoja totale vjetore lëviz ndërmjet 8,07 dhe 11,86 miliardë lekë në vitin 2027, ndërsa kulmi, prej 13,60 miliardë lekësh, bie në vitin 2029, me inflacion 5%, referencë të ngrirë, N_R të lartë dhe kontribute. Ky kulm përbën 11,3% të zërit « Paga » dhe 21,4% të deficitit të buxhetit të shtetit për vitin 2026. Kostoja e përhershme varet nga rritja e referencës në dy drejtime, sepse kjo e lëviz edhe krahasuesin: në vitin 2031, ajo është 5,16 miliardë lekë kur referenca ngrin, dhe bashkë me të ngrin edhe paga e Presidentit, 4,13 miliardë kur referenca rritet 2,5% dhe 4,58 miliardë kur rritet 5%. Nëse llogaritja kufizohet vetëm te 417 gjyqtarët, kostoja e përhershme, me nivelet e vitit 2026, bie në 0,78–1,09 miliardë lekë në vit.
+
+Me tavan 5 miliardë lekë në vit, prapambetja shlyhet brenda vitit 2029 në të gjitha kombinimet, përveç atyre me N_R të lartë, ku mbetet një hendek prej 2,16 miliardë lekësh, ose 2,52 miliardë me kontribute. Një fond i pamjaftueshëm, megjithatë, nuk e bën të lejueshëm cenimin e një detyrimi kushtetues. Mënyrat e ligjshme të mbulimit janë (i) shtyrja e kalendarit me ligj, me kompensim për inflacionin, (ii) fondi i kontingjencës, me precedentin e Vendimit me №755/2023, (iii) rialokimi brenda buxhetit, dhe (iv), vetëm si masë e përgjithshme dhe në kushtet e Kreut V, § 8, pezullimi i një rishikimi.
+
+### 2. Testi historik 2019–2026
+
+Testi historik pyet nëse paketa, *sikur* të ishte zbatuar nga 1.1.2019, do ta kishte parandaluar erozionin që Gjykata konstatoi. Ai nuk pretendon se formula duhej zbatuar juridikisht gjatë gjithë kësaj periudhe. Kundërfaktikja nis nga R = 143.800 lekë, standardi i Vendimit me №35/2022 më 1.1.2019,[[fn: Vendimi i Gjykatës Kushtetuese me №35/2022, §§ 77 dhe 80.]] ndjek referencën civile dhe ka rishikime inflacioni më 1.2021, 1.2023 dhe 1.2025.
+
+| Muaji | Kundërfaktikja | E paguar | 143.800 e indeksuar me IÇK |
+|---|---|---|---|
+| 1.2019 | 143.800 | 118.100 | 146.085 |
+| 12.2022 | 152.700 | 118.100* | 163.665 |
+| 1.2023 | 163.665 | 118.100* | 165.423 |
+| 4.2023 | 231.000 | 153.000 | 168.411 |
+| 1.2026 | 236.425 | 156.825 | 178.432 |
+
+*Tabela 15. Testi historik, në lekë. * Supozim: nuk është verifikuar nëse nga tetori 2022 u pagua 126.300 lekë, sipas VKM №621/2022, ose nga janari 2023 152.700 lekë, pas hyrjes në fuqi të Vendimit me №35/2022. Llogaritja: faza2d_historik.csv.*
+
+Prej këtej nxirren tre përfundime. Së pari, ulja e fshehtë e vitit 2023 do të ishte parandaluar automatikisht: komponenti i referencës e çon R nga 152.700 në 231.000 lekë në prill 2023, pa asnjë ndërhyrje ligjore, pra pikërisht në bazën e paketës. Kjo tregon se baza e propozuar është ajo që vetë rregulli do të kishte prodhuar, por nuk e bën atë të vetmen bazë të mundshme. Së dyti, inflacioni i vitit 2022 do të ishte kompensuar vetëm me vonesë: pa rishikim të jashtëzakonshëm, kundërfaktikja do të kishte humbur deri në 9,72% të vlerës reale para rishikimit të 1.2023, ndërsa me shkasin e propozuar, i cili do të ishte aktivizuar një herë, në prill 2022, humbja do të kufizohej në 8,13%. Kjo është dobësia e rishikimit dyvjeçar në periudha inflacioni të lartë. Së treti, në vitin 2026 kundërfaktikja jep 236.425 lekë, pra vlerën e Këshillave, e cila është 2,92% nën paketën, sepse rishikimi kundërfaktik i vitit 2025 e mati inflacionin nga baza e vitit 2019 dhe jo nga ajo e vitit 2023. Testi tregon, pra, se rregulli e mbron pagën; ai nuk tregon, dhe nuk mund të tregojë, se rregulli do ta kishte penguar ligjvënësin ta ndryshonte vetë formulën, siç ndodhi në vitin 2023.
+
+### 3. Testet K1–K18
+
+| K | Kërkesa | Ligji №95/2026 | Paketa | Verifikimi ose garancia |
+|---|---|---|---|---|
+| K1 | Ligj brenda afatit | ✗ 49 ditë vonesë | ~ | Efekt nga 1.4.2023, kompensim IÇK, rregulla kalimtare |
+| K2 | Rregullat me ligj | ~ | ✓ | Baza, formula, burimi dhe datat në ligj |
+| K3 | Konsultim efektiv | ✗ | ✓ | Detyrim ligjor konsultimi, përgjigje e arsyetuar |
+| K4 | Pa ulje të fshehtë | ✗ +5,8% kundrejt 44–65% | ✓ | R ≥ R*_0 · Ref_t / Ref_0 në çdo muaj |
+| K5 | Ndjek referencën | ~ | ✓ | Komponenti i referencës |
+| K6–K7 | Riparim brenda limiteve | ✗ | ✓ | 219.888 ≤ 231.000 ≤ 252.519 |
+| K8 | Referencë që indeksohet | ✗ | ✓ | Rrjeta civile + IÇK |
+| K9 | Mbrojtje nga inflacioni | ✗ −2,6% | ✓ | Rregulli i niveleve; shkasi i jashtëzakonshëm |
+| K10 | Si kategoritë e tjera | ~ | ~ | Masë e përgjithshme sipas Nenit 138 « a » |
+| K11 | Në linjë me ekonominë | ✗ | ~ | Raport dyvjeçar dhe detyrim për vendim të arsyetuar |
+| K12–K13 | Efekte nga 1.4.2023; rregulli i paracaktuar | ~ / ✗ | ✓ | Kalendari; baza = formula e § 110 |
+| K14 | Paga totale dhe hierarkia | ✓ | ✓ | W lineare |
+| K17 | Ulje vetëm sipas Nenit 138 « a » | ~ | ✓ | L95: tavani i indeksimit nuk u shfuqizua, por nuk shoqërohet me kushtet e § 81 (b); paketa: pezullim vetëm në mekanizmin e jashtëzakonshëm |
+| K18 | Pa mjete presioni | ✗ | ~ | Publikim deklarativ; pagesë e detyrueshme; Ref_t mbetet akt i ekzekutivit, por vepron vetëm për rritje |
+
+*Tabela 16. Testet K1–K18 (✓ plotëson; ✗ nuk plotëson; ~ pjesërisht), sipas leximit të studimit. K15 dhe K16 jepen në Shtojcën C. Llogaritja: faza2d_K.csv.*
+
+Kërkesa K18 meriton një vërejtje të veçantë. Ligji i buxhetit për vitin 2026 e cakton pagën e Presidentit vetëm në vlerën bazë, ndërsa masën e indeksimit të saj ia lë Këshillit të Ministrave, pa asnjë kriter.[[fn: Ligji me №87/2025, « Për buxhetin e vitit 2026 », Neni 13.]] Meqenëse Ligji me №95/2026 e lidh R me këtë pagë, ekzekutivi, në fakt, e cakton pagën e magjistratëve nëpërmjet indeksimit të pagës së Presidentit, në të dy drejtimet. Sipas leximit të studimit (b), kjo është lloji i hapësirës së ndikimit që Gjykata e cilëson si të papranueshme.[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, §§ 77 dhe 81. Për formulën e vitit 2023, Gjykata vlerësoi se kriteri i caktimit me ligj « duket se është plotësuar » (§ 89); ndryshimi i mëvonshëm është se, me Ligjin me №87/2025, Neni 13, masa e indeksimit të pagës së Presidentit i është deleguar Këshillit të Ministrave.]] Pika (iii) e mendimit të pakicës vlen, pra, për të dyja zgjidhjet, sepse edhe paketa i referohet një page që caktohet me vendim të Këshillit të Ministrave. Dallimi është se, te paketa, ky ndikim mund ta rrisë R, por jo ta ulë, sepse baza dhe komponenti i inflacionit janë jashtë kontrollit të ekzekutivit. Për këtë arsye, studimi i jep paketës « ~ » dhe jo « ✓ » në K18. Në vitin 2026, të tri indeksimet, pra ato të pagës së Presidentit, të pagës referuese bazë dhe të rrjetës civile, ishin 2,5%, ndërkohë që inflacioni kumulativ nga marsi 2023 ishte 5,43%.
+
+### 4. Vlera reale dhe korridori
+
+Vlera e 152.700 lekëve të shtatorit 2022, në çmimet e gushtit 2026, është 170.015 lekë. Ligji me №95/2026 mbetet 2,63% nën të, ndërsa paketa është 43,25% mbi të, sepse përfshin riparimin e § 109. Kundrejt vlerës reale të bazës së vet, pra 248.602 lekë, paketa është 2,04% më poshtë në gusht 2026, gjë që i detyrohet vonesës brenda ciklit dyvjeçar dhe rikthehet më 1.1.2028. Paketa e plotëson korridorin në çdo mënyrë llogaritjeje të Tabelës 1a dhe dyshemenë prej 236.425 lekësh në skenarin A, ndërsa Ligji me №95/2026 nuk e plotëson asnjërin.
+
+### 5. Ndjeshmëria dhe stresi
+
+| Skenari (d) | Humbja reale maksimale e paketës | Rishikime të jashtëzakonshme |
+|---|---|---|
+| Bazë: inflacion 3%, referencë +2,5% | −5,82% | 0 |
+| Episod si 2022–2023, pa shkas | −9,09% | — |
+| Episod si 2022–2023, me shkasin e propozuar | −5,74% | 2 |
+| Inflacion 5% në vit, me shkasin e propozuar | −5,56% | 5 |
+
+*Tabela 17. Stresi i inflacionit, 2026–2031. Për krahasim, Ligji me №95/2026 humbet 10,18% në episodin e inflacionit dhe 16,32% nëse paga e Presidentit ngrin. Llogaritja: faza3_rishikim.py, seksioni (c); faza2d_stresi.csv.*
+
+Paketa funksionon kur inflacioni është afër objektivit prej 3% të Bankës së Shqipërisë dhe referenca lëviz normalisht: humbja maksimale brenda ciklit është rreth 6%, dhe rikuperohet plotësisht në çdo rishikim. Ajo dobësohet në një episod inflacioni si ai i viteve 2022–2023, kur, pa shkas, humbja arrin 9,09% para rishikimit, pra afërsisht sa humbja historike e vitit 2022. Shkasi i propozuar e ul këtë humbje në 5,74% dhe, duke qenë se rregulli është i niveleve, ai vetëm e sjell më herët pagesën, pa e ngritur nivelin e rishikimeve të rregullta.
+
+Në rast ngrirjeje të pagave civile, paketa e ruan vlerën reale të pagës së magjistratëve dhe i çon ata, deri në vitin 2031, 16% mbi rrjetën civile. Juridikisht, paketa funksionon; politikisht, ajo ngre pyetjen e barazisë me kategoritë e tjera, të cilës iu dha përgjigje në Kreun IV, § 6. Rënia e të ardhurave buxhetore, në fund, nuk e prek detyrimin, por vetëm kalendarin: me tavan 3 miliardë lekë në vit, kalendari 2027–2029 lë një hendek prej 4,84 miliardë lekësh, ndërsa shtyrja deri në vitin 2031 nuk lë hendek, me një vonesë mesatare prej 51,1 muajsh dhe kompensim prej 1,74 miliardë lekësh. Asnjë krizë nuk e aktivizon vetvetiu Nenin 138, shkronja « a »; mekanizmi kërkon ligj të veçantë që plotëson gjashtë kushtet.
+
+### 6. Krahasimi me vlerësimet zyrtare të kostos
+
+Kostot e këtij studimi mund të duken, në shikim të parë, shumë më të larta se vlerësimet që qarkulluan gjatë procedurës parlamentare, prandaj është e nevojshme të shpjegohet ndryshimi. Këshilli i Ministrave e vlerësoi efektin e kalimit nga 0,36 në 0,38 në rreth 260 milionë lekë për prill–dhjetor 2023, rreth 740 milionë lekë për vitet 2024–2025, rreth 1,5 miliardë lekë gjithsej për 2023–2026, dhe rreth 500 milionë lekë në vit në vazhdim.[[fn: Raporti i KDNJMIP, 15.9.2026, mendimi i Këshillit të Ministrave.]] Këto shifra matin një rritje prej vetëm 8.500 lekësh në pagën referuese bazë, ndërkohë që paketa e studimit mat një rritje shumë më të madhe. Kur ato përkthehen në njësi-R, tri shifrat e para japin 3.399, 3.627 dhe 3.922 njësi-R, pra bien brenda më pak se një të pestës nën kalibrimin qendror të këtij studimi, ndërsa vetëm shifra e katërt, 4.902, del më e lartë, sepse drafti fillestar përfshinte edhe shtesa të reja për Gjykatën e Lartë dhe Prokurorinë e Përgjithshme, të cilat u hoqën më pas. Vlerësimi i Ndikimit Rregullator i vitit 2023, me 959 milionë lekë në vit, jep, në varësi të bazës së supozuar, ndërmjet 2.290 dhe 3.824 njësi-R, pra një interval më të gjerë, sepse baza buxhetore e tij nuk është e qartë.[[fn: Vlerësimi i Ndikimit Rregullator, 7.4.2023. Llogaritja: faza1_llogaritjet.py, seksionet H dhe J.]] Me fjalë të tjera, burimet zyrtare dhe ato të palëve, pavarësisht interesave të kundërta, janë të pajtueshme me kalibrimin e studimit, dhe ndryshimi i shifrave përfundimtare buron kryesisht nga madhësia e riparimit, e jo nga metoda e llogaritjes.
+
+## VII. DISPOZITAT LIGJORE MODEL DHE PLANI I ZBATIMIT
+
+### 1. Çfarë rregullohet me ligj dhe çfarë me akt administrativ
+
+Duke u nisur nga kërkesa K2, nga pika (iii) e mendimit të pakicës dhe nga theksi i Gjykatës se rregullat themelore të pagës duhet të jenë objektive, të parashikueshme dhe të caktuara me ligj,[[fn: Vendimi i Gjykatës Kushtetuese me №15/2026, §§ 71 dhe 76–77.]] me ligj duhet të rregullohen baza në lekë, formula, referenca, procedura për pasardhësen e saj, burimi statistikor, datat e rishikimit, shkasi i rishikimit të jashtëzakonshëm, rregullat e rrumbullakimit dhe të vintazhit, kalendari dhe kompensimi i prapambetjeve, si dhe kushtet e mekanizmit të jashtëzakonshëm. Zbatimit administrativ i lihen vetëm vërtetimi i indeksit nga INSTAT-i, publikimi deklarativ i vlerës së llogaritur dhe pagesa. Në këtë mënyrë kufizohet diskrecioni arbitrar, pa u zhdukur kompetencat kushtetuese të Këshillit të Ministrave për rrjetën e pagave civile, ndërsa paga individuale nuk kushtëzohet me përmbajtjen e vendimeve gjyqësore.
+
+### 2. Projektligji model
+
+Dispozitat e mëposhtme janë të hartuara si ndryshime në Ligjin me №96/2016, ashtu siç është ndryshuar me Ligjin me №95/2026, i cili ka shtuar tashmë Nenin 12/1. Ato përbëjnë rekomandim (e), dhe parametrat që janë zgjedhje e ligjvënësit shënohen më poshtë si të tillë.
+
+**Neni 1.** Në Nenin 12, pika 5, shkronja « a », ndryshon si më poshtë:
+
+> « a) paga referuese bazë për funksionet gjyqësore dhe të prokurorisë, e cila është 231 000 lekë në muaj, nga data 1.4.2023, dhe përditësohet sipas nenit 12/2 të këtij ligji. »
+
+**Neni 2.** Pas Nenit 12/1 shtohet Neni 12/2 me këtë përmbajtje:
+
+> « Neni 12/2. Përditësimi i pagës referuese bazë. 1. Paga referuese bazë e çdo muaji është më e madhja ndërmjet: a) pagës referuese bazë të muajit paraardhës; b) shumës 231 000 lekë, të shumëzuar me raportin ndërmjet indeksit të çmimeve të konsumit të muajit që paraprin datën e rishikimit të fundit dhe atij të muajit mars 2023; c) pagës referuese të muajit. »
+
+> « 2. Paga referuese, në kuptim të këtij neni, është paga për pozicion e klasës I-2, sipas vendimit të Këshillit të Ministrave nr. 325/2023, plus paga në grup për diplomën e nivelit të parë, si dhe çdo element tjetër i përgjithshëm i pagës që i shtohet më pas kësaj klase në vend të rritjes së pagës për pozicion. Nëse klasa ndryshon emërtim, ndahet, bashkohet ose shfuqizohet, ministri përgjegjës për financat përcakton, brenda 15 ditëve, me urdhër të arsyetuar, klasën pasardhëse që i korrespondon funksionalisht pozicioneve të barasvlershme me drejtorin e drejtorisë së përgjithshme në Kryeministri. Këshilli i Lartë Gjyqësor dhe Këshilli i Lartë i Prokurorisë mund ta kundërshtojnë urdhrin brenda 30 ditëve në gjykatën administrative, e cila vendos me procedurë të përshpejtuar. Ulja, ndarja ose shfuqizimi i klasës referuese nuk sjell ulje të pagës referuese bazë. »
+
+> « 3. Rishikimi i komponentit të shkronjës « b » të pikës 1 bëhet më 1 janar të çdo viti çift. Ai bëhet edhe në muajin pasardhës të atij në të cilin, njëkohësisht, rritja kumulative e indeksit nga matja e fundit e kalon 4 për qind dhe inflacioni vjetor e kalon me më shumë se një pikë përqindjeje nivelin e targetuar të inflacionit nga Banka e Shqipërisë. »
+
+> « 4. Indeksi i çmimeve të konsumit është indeksi kombëtar total i publikuar nga INSTAT. Të dyja vlerat e indeksit merren nga i njëjti botim, më i fundit në datën e llogaritjes, dhe INSTAT vërteton raportin e tyre brenda 10 ditëve nga publikimi. Paga referuese bazë llogaritet pa rrumbullakim dhe paguhet e rrumbullakuar në lek. »
+
+> « 5. Ministria e Financave publikon vlerën e llogaritur dhe të dhënat mbi të cilat mbështetet brenda datës 15 të muajit të rishikimit dhe brenda 15 ditëve nga çdo ndryshim i pagës referuese. Akti ka karakter deklarativ. Pagesa e pagës sipas këtij neni është shpenzim i detyrueshëm dhe nuk kushtëzohet nga publikimi. Çdo institucion i sistemit të drejtësisë ose çdo magjistrat mund të kërkojë korrigjimin e llogaritjes; diferencat në favor të magjistratit paguhen të indeksuara, ndërsa pagesat e tepërta kompensohen vetëm me rritjet e ardhshme, pa mbajtje nga paga. Kontrolli i Lartë i Shtetit auditon çdo vit zbatimin e këtij neni. »
+
+**Neni 3.** Pas Nenit 12/2 shtohet Neni 12/3 me këtë përmbajtje:
+
+> « Neni 12/3. Masat e jashtëzakonshme. Përditësimi sipas shkronjës « b » të pikës 1 të nenit 12/2 mund të pezullohet vetëm me ligj të veçantë, për një rishikim të vetëm dhe për jo më shumë se dy vjet, kur njëkohësisht: a) masa zbatohet në të njëjtën shkallë, ose më të lartë, për të gjitha pagat e paguara nga buxheti i shtetit, përfshirë kategorinë referuese dhe funksionarët politikë, dhe ulja e vlerës reale të pagës së magjistratëve nuk e kalon atë të kategorive të tjera; b) ligji mbështetet në të dhëna fiskale të publikuara dhe në vlerësimin e alternativave; c) paraprihet nga konsultimi me Këshillin e Lartë Gjyqësor dhe Këshillin e Lartë të Prokurorisë. Paga referuese bazë nuk ulet nominalisht dhe nuk bie nën shumën 152 700 lekë, të shumëzuar me raportin e indeksit të çmimeve të konsumit ndërmjet muajit paraardhës dhe muajit gusht 2022. Në rishikimin pasardhës zbatohet pika 1 e nenit 12/2 pa asnjë kufizim. »
+
+**Neni 4.** Pas Nenit 12/3 shtohet Neni 12/4 me këtë përmbajtje:
+
+> « Neni 12/4. Konsultimi dhe raporti periodik. 1. Çdo projektakt që prek pagën e magjistratëve u dërgohet Këshillit të Lartë Gjyqësor, Këshillit të Lartë të Prokurorisë dhe shoqatave të magjistratëve, të paktën 30 ditë para shqyrtimit në komisionin përgjegjës. Relacioni shoqërues përmban përgjigje të arsyetuar për çdo vërejtje. 2. Çdo dy vjet, duke filluar nga viti 2028, INSTAT dhe Ministria e Financave publikojnë një raport që krahason pagën referuese bazë me pagën mesatare bruto në ekonomi dhe në sektorin shtetëror. 3. Nëse, në pesë vjetët e fundit, rritja e pagës referuese bazë mbetet pas njërit prej këtyre treguesve me më shumë se 5 pikë përqindjeje, Kuvendi, brenda gjashtë muajve, vendos me vendim të arsyetuar nëse jep një rritje shtesë. »
+
+**Neni 5.** Në Nenin 12/1, paragrafi i dytë ndryshon si më poshtë:
+
+> « Për funksionarët dhe nëpunësit e tjerë publikë që nuk gëzojnë statusin e magjistratit, kur pagat e tyre referojnë te paga e gjyqtarit ose prokurorit, llogaritja kryhet duke marrë parasysh pagën referuese bazë prej 156 825 lekësh, e cila, nga data e hyrjes në fuqi të këtij ligji, indeksohet në të njëjtat data dhe në të njëjtën masë si pagat e kategorisë së tyre. Funksionarët që gëzojnë statusin e magjistratit gjatë mandatit ndjekin pagën referuese bazë sipas nenit 12/2. »
+
+**Neni 6. Dispozita kalimtare.**
+
+> « 1. Rishikimi i datës 1.1.2026 sipas pikës 3 të nenit 12/2 konsiderohet i kryer. Paga referuese bazë nga data 1.1.2026 është 243 539 lekë. 2. Diferencat ndërmjet pagës sipas këtij ligji dhe pagës së paguar, për periudhën nga 1.4.2023 deri në hyrjen në fuqi të këtij ligji, paguhen gjatë viteve 2027, 2028 dhe 2029, duke filluar nga muajt më të vjetër, brenda kufirit vjetor që përcaktohet me ligjin e buxhetit. Çdo shumë indeksohet me indeksin e çmimeve të konsumit nga muaji në të cilin ishte e detyrueshme deri në muajin e pagesës. Çdo këst i papaguar në afat është i ekzekutueshëm. 3. Shumat e paguara sipas vendimeve të Këshillit të Lartë Gjyqësor nr. 435/2026, të Këshillit të Lartë të Prokurorisë nr. 144/2026, ose sipas vendimeve gjyqësore, njihen si paradhënie dhe nuk kthehen. 4. Rishikimi i parë i rregullt sipas pikës 3 të nenit 12/2 bëhet më 1.1.2028. 5. Brenda gjashtë muajve, Ministria e Financave, në bashkëpunim me Këshillin e Lartë Gjyqësor dhe Këshillin e Lartë të Prokurorisë, inventarizon diferencat e papaguara sipas vendimit të Gjykatës Kushtetuese nr. 35/2022 për periudhën 1.1.2019–31.3.2023 dhe i paraqet Kuvendit një plan shlyerjeje. »
+
+**Neni 7. Shfuqizime.**
+
+> « Nga data 1.4.2023, për llogaritjen e pagës referuese bazë nuk zbatohen koeficienti 0,38 dhe rregulli i indeksimit të nenit 12, pika 5, shkronja « a », në redaksinë e ligjit nr. 95/2026, si dhe vendimi i Këshillit të Ministrave nr. 93, datë 6.2.2026. »
+
+**Neni 8. Hyrja në fuqi.**
+
+> « Ky ligj hyn në fuqi më 1.1.2027 dhe i shtrin efektet financiare nga data 1.4.2023. »
+
+Secila dispozitë i përgjigjet një rezultati të caktuar të analizës, dhe lidhja ndërmjet tyre duhet të jetë e dukshme edhe për lexuesin e relacionit shoqërues të projektligjit:
+
+| Dispozita | Kërkesa | Rezultati i analizës që e mbështet |
+|---|---|---|
+| Neni 1: baza 231.000 lekë në ligj | K2, K6–K7, K12–K13 | Gjurma funksionale e V35; formula e § 110; Kreu IV, § 2 |
+| Neni 2 § 1: maksimumi i niveleve | K4, K5, K9 | E vetmja alternativë pa humbje në S1 dhe S2; pa efekt çikriku (Kreu V, § 3) |
+| Neni 2 § 2: referenca dhe pasardhësja | K5, K8, K18; V35 § 84 | Leximet I-4 dhe I-5 bien nën korridor; mbrojtje nga shmangia (Kreu II, § 3) |
+| Neni 2 § 3: rishikimi dyvjeçar dhe shkasi | K9; § 106 | Humbja maksimale bie nga 9,09% në 5,74% në episodin e inflacionit, pa kosto në objektiv |
+| Neni 2 §§ 4–5: burimi, vintazhi, publikimi, pagesa, auditimi | K2, K18 | Rregulli i niveleve nuk humbet nga rishikimet statistikore; automatizëm |
+| Neni 3: masat e jashtëzakonshme | K10, K17 | Pezullim i përkohshëm me rikuperim nivelesh; dysheme reale |
+| Neni 4: konsultimi dhe raporti periodik | K3, K11 | § 98; § 102; hendeku ndaj pagës mesatare në ekonomi |
+| Neni 5: kategoritë e lidhura | Neni 12/1 i L96 | Shkëputje pa erozion pa afat (Kreu V, § 5) |
+| Nenet 6–8: dispozitat kalimtare dhe shfuqizimet | K1, K12; § 110 | Kalendari « së pari më të vjetrat »; paradhëniet nuk kthehen; 243.539 lekë nga 1.2026 |
+
+*Tabela 18. Lidhja ndërmjet dispozitave model dhe analizës.*
+
+Parametrat 10, 15 dhe 30 ditë, gjashtë muaj, dy vjet dhe 5 pikë përqindjeje nuk dalin nga modeli, por janë zgjedhje e ligjvënësit (e), ndërsa pragu prej 4% është marrë nga vetë Ligji me №95/2026, si shkas dhe jo si tavan.
+
+### 3. Plani i zbatimit
+
+| Afati | Veprimi | Institucioni përgjegjës |
+|---|---|---|
+| Tetor–nëntor 2026 | Konsultimi me Këshillat dhe shoqatat, të paktën 30 ditë | Kuvendi, nismëtarët |
+| Dhjetor 2026 | Miratimi i ligjit; ndryshimi i ligjit të buxhetit për vitin 2027, për fondet e pagës dhe të këstit të parë | Kuvendi, Ministria e Financave |
+| 1.1.2027 | Hyrja në fuqi; paga referuese bazë 243.539 lekë | — |
+| 15.1.2027 | Publikimi deklarativ i vlerës dhe i llogaritjes | Ministria e Financave, INSTAT |
+| 2027–2029 | Shlyerja e prapambetjeve sipas kalendarit, me kompensim IÇK | Institucionet e sistemit të drejtësisë, Thesari |
+| Qershor 2027 | Inventari i diferencave 2019–2023 dhe plani i shlyerjes | Ministria e Financave, Këshillat |
+| 1.1.2028 | Rishikimi i parë i rregullt dhe raporti i parë dyvjeçar | Ministria e Financave, INSTAT, Kuvendi |
+| Çdo vit | Auditimi i zbatimit | Kontrolli i Lartë i Shtetit |
+
+*Tabela 19. Plani i zbatimit.*
+
+## VIII. KUFIZIMET E STUDIMIT
+
+Përfundimet e këtij studimi duhen lexuar brenda pesë kufizimeve. Së pari, disa të dhëna nuk kanë qenë të disponueshme: numri i magjistratëve në detyrë sipas profilit, numri i përfituesve në kategoritë e lidhura dhe i pensionistëve suplementarë, tekstet e vendimeve gjyqësore të gushtit 2026, niveli i saktë i pagave të shtatorit 2026 dhe opinioni juridik i gjyqtarit A. Bega. Vendimi me №144/2026 i Këshillit të Lartë të Prokurorisë u shqyrtua vetëm në kopje të skanuar, ndërsa të dhënat e Thesarit dhe të INSTAT-it u përpunuan nga publikimet zyrtare, por nuk u verifikuan në mënyrë të pavarur me institucionet. Këto mungesa ndikojnë në kalibrimin e kostos, por jo në zgjedhjen e paketës, e cila mbetet e njëjtë në çdo vlerë të njësive-R dhe në të gjithë skenarët juridikë. Së dyti, kostot janë bruto dhe kufi i sipërm, sepse përfshijnë kategoritë e lidhura dhe nuk zbresin tatimin që kthehet në buxhet. Së treti, disa elemente të modelit janë supozime (d), si indeksimi i ardhshëm i pagës së Presidentit me normën e pagave civile, pagesa e gushtit 2026 me 236.425 lekë për të gjithë dhe hyrja në fuqi e paketës më 1.1.2027. Së katërti, skenarët e së ardhmes janë të stilizuar dhe transparentë, dhe jo probabilistikë, sepse shpërndarje të mbështetura në të dhëna nuk ekzistojnë për të gjithë parametrat. Së pesti, disa pika janë interpretime juridike (b), si leximi i § 109 si korridor, burimi i shifrës « afërsisht 44% », identifikimi i klasës I-2 si pasardhëse e referencës dhe vlera e ngrirjes sipas Nenit 12/1, të cilat mund të kontestohen. Studimi nuk e premton pranimin politik të paketës, as rezultatin e një kontrolli të ardhshëm kushtetues; ai argumenton vetëm se, ndër alternativat e analizuara, ajo është më e mbrojtshmja.
+
+## PËRFUNDIME
+
+Paga e magjistratëve, e cila deri më sot është trajtuar kryesisht si çështje buxhetore, ose, në rastin më të mirë, si çështje e një shume të caktuar, u tregua, përgjatë këtij studimi, si një problem që ka, në thelb, natyrë kushtetuese dhe strukturë matematikore. Vendimi i Gjykatës Kushtetuese me №15/2026 nuk kërkon një shumë, por një rezultat: riparimin e uljes së fshehtë « në raport të drejtë me rritjet e tjera ». Ky rezultat, nga ana e tij, nuk mund të arrihet me një koeficient të vetëm, të caktuar një herë e përgjithmonë, sepse ulja e fshehtë nuk është një ngjarje, por një proces, i cili zhvillohet në kohë, sa herë që gjithçka rritet përreth pagës, ndërsa ajo mbetet në vend.
+
+Nisur nga kjo premisë, studimi i trajtoi kërkesat e Gjykatës, ashtu siç i lexon, si kufizime të detyrueshme dhe jo si objektiva që mund të shkëmbehen me kursime buxhetore. Prej këtej u nxorën katër përfundime. Së pari, Ligji me №95/2026, me koeficientin 0,38, e përsërit, në thelb, mekanizmin që Gjykata dënoi: ai e rrit pagën referuese bazë vetëm 5,8% ndaj së drejtës së fituar, ndërkohë që referencat u rritën 44–65%, nuk e ruan as vlerën reale të saj dhe, duke e lidhur pagën me një pagë që indeksohet me akt të Këshillit të Ministrave pa kritere, i lë ekzekutivit një hapësirë ndikimi në të dy drejtimet. Ky përfundim nuk varet nga mënyra si llogaritet korridori. Së dyti, baza më e mbështetur e riparimit është rezultati i zbatimit të rregullit që Vendimi me №35/2022 e la në fuqi, mbi strukturën e re të pagave civile, pra 231.000 lekë nga 1.4.2023, e cila përputhet edhe me rregullin e paracaktuar të § 110; ajo nuk është, megjithatë, e vetmja e mundshme, dhe varianti me bazë 219.888 lekë mbetet zgjedhje e ligjshme e Kuvendit, me çmim të matur. Së treti, ndjekja e referencës dhe mbrojtja nga inflacioni janë dy kërkesa të dallueshme, dhe asnjëra prej tyre nuk e garanton tjetrën, prandaj formula duhet t'i ndjekë që të dyja, sipas maksimumit të niveleve kumulative, në mënyrë që të shmanget edhe numërimi i dyfishtë. Së katërti, testi historik tregon se kjo formulë do ta kishte mbrojtur automatikisht pagën nga ulja e fshehtë e vitit 2023, por jo nga një ndryshim i vetë formulës nga ligjvënësi, gjë që e bën garancinë procedurale po aq të rëndësishme sa formula.
+
+Paketa e propozuar i jep secilit pushtet një interes të ligjshëm për ta pranuar. Gjyqësori merr pagën e riparuar dhe mbrojtjen e saj në kohë. Ekzekutivi merr një formulë automatike, me kosto të parashikueshme, rreth 3,50 miliardë lekë bruto në vitin 2027 ndaj ligjit në fuqi, si kufi i sipërm, një kalendar shlyerjeje të shtrirë në tre vjet, si dhe një mekanizëm të ligjshëm për kohë krize. Kuvendi rikthen kompetencën e tij ligjvënëse dhe mbyll një konflikt që, nga gushti i vitit 2026, ka përfshirë tre organe kushtetuese dhe gjykatat administrative. Mbetet, megjithatë, një pyetje që modeli nuk mund ta zgjidhë, dhe që i takon ligjvënësit: në çfarë mase paga e magjistratëve, përtej ruajtjes së vlerës reale, duhet të ndjekë edhe rritjen reale të pagave në ekonomi, e cila, nga viti 2023, ka qenë, në terma nominalë, rreth pesë herë më e shpejtë se rritja e pagës referuese të propozuar. Për këtë pyetje, studimi propozon një procedurë dhe jo një përgjigje.
+
+[[PAGEBREAK]]
+
+## BIBLIOGRAFIA
+
+### Legjislacioni
+
+- Ligji me №8417, datë 21 tetor 1998, « Kushtetuta e Republikës së Shqipërisë », i amenduar
+- Ligji me №8097, datë 21 mars 1996, « Për pensionet shtetërore suplementare të personave që kryejnë funksione kushtetuese dhe të punonjësve të shtetit », i amenduar
+- Ligji me №8577, datë 10 shkurt 2000, « Për organizimin dhe funksionimin e Gjykatës Kushtetuese të Republikës së Shqipërisë », i amenduar
+- Ligji me №96/2016, « Për statusin e gjyqtarëve dhe prokurorëve në Republikën e Shqipërisë », i amenduar
+- Ligji me №115/2016, « Për organet e qeverisjes së sistemit të drejtësisë », i amenduar
+- Ligji me №33/2023, « Për një ndryshim në ligjin nr. 96/2016, “Për statusin e gjyqtarëve dhe prokurorëve në Republikën e Shqipërisë”, të ndryshuar »
+- Ligji me №34/2023, « Për disa ndryshime në ligjin nr. 9584, datë 17.7.2006, “Për pagat, shpërblimet dhe strukturat e institucioneve të pavarura kushtetuese dhe të institucioneve të tjera të pavarura, të krijuara me ligj”, të ndryshuar »
+- Ligji me №97/2023, « Për buxhetin e vitit 2024 », i amenduar
+- Ligji me №115/2024, « Për buxhetin e vitit 2025 », i amenduar
+- Ligji me №87/2025, « Për buxhetin e vitit 2026 », i amenduar me Aktin Normativ me №2, datë 30.6.2026
+- Ligji me №95/2026, datë 18.9.2026, « Për disa shtesa dhe ndryshime në ligjin nr. 96/2016, “Për statusin e gjyqtarëve dhe prokurorëve në Republikën e Shqipërisë”, i ndryshuar »
+- Dekreti i Presidentit të Republikës me №495, datë 18.9.2026
+
+### Akte nënligjore dhe akte të organeve të qeverisjes së sistemit të drejtësisë
+
+- Vendimi i Këshillit të Ministrave me №187/2017, i ndryshuar, përfshirë Vendimin me №621, datë 28.9.2022
+- Vendimi i Këshillit të Ministrave me №325/2023, në redaksinë fillestare dhe të konsoliduar
+- Vendimi i Këshillit të Ministrave me №755, datë 20.12.2023
+- Vendimi i Këshillit të Ministrave me №92, datë 6.2.2026
+- Vendimi i Këshillit të Ministrave me №93, datë 6.2.2026
+- Vendimi i Këshillit të Ministrave me №131/2026
+- Vendimi i Këshillit të Lartë Gjyqësor me №233, datë 23.4.2025
+- Vendimi i Këshillit të Lartë Gjyqësor me №435, datë 26.8.2026
+- Vendimi i Këshillit të Lartë të Prokurorisë me №144, datë 28.8.2026
+
+### Jurisprudenca
+
+- Vendimi i Gjykatës Kushtetuese me №35, datë 22.11.2022
+- Vendimi i Gjykatës Kushtetuese me №15, datë 17.2.2026, përfshirë mendimin e pakicës
+
+### Jurisprudenca e huaj
+
+- Gjykata e Drejtësisë e Bashkimit Evropian, çështja C-64/16, Associação Sindical dos Juízes Portugueses kundër Tribunal de Contas, datë 27.2.2018
+- Bundesverfassungsgericht, 2 BvL 17/09 e të tjera, datë 5.5.2015
+
+### Dokumente parlamentare dhe raporte auditimi
+
+- Vlerësimi i Ndikimit Rregullator i projektligjit për ndryshimin e Ligjit me №96/2016, 7.4.2023, dhe Raporti i Komisionit për Ekonominë dhe Financat, 22.5.2023
+- Raporti i Komisionit për Çështjet Ligjore dhe Administratën Publike, 15.9.2026
+- Raporti i Komisionit për të Drejtat e Njeriut dhe Mjetet e Informimit Publik, 15.9.2026
+- Kontrolli i Lartë i Shtetit, Raporti i auditimit financiar dhe të përputhshmërisë në Gjykatën e Lartë, shkurt 2023
+- Kontrolli i Lartë i Shtetit, Raporti i auditimit financiar në Këshillin e Lartë të Prokurorisë, maj 2024
+
+### Të dhëna statistikore dhe financiare
+
+- INSTAT, « Indeksi i Çmimeve të Konsumit » dhe « Indeksi i Harmonizuar i Çmimeve të Konsumit », seritë mujore 2016–2026
+- INSTAT, « Paga mesatare mujore bruto », botimet tremujore T1/2016–T2/2026
+- Banka e Shqipërisë, « Raporti tremujor i politikës monetare », 2025/I–2026/III
+- Banka e Shqipërisë, Çeliku, E., « Përmbledhës metodologjik mbi matje të inflacionit bazë në Shqipëri », material teknik, dhjetor 2024
+- Ministria e Financave dhe Ekonomisë, « Pagesa të kryera nga Drejtoria e Përgjithshme e Thesarit », regjistrat ditorë, janar 2024 – tetor 2026
+
+### Studime
+
+- Prifti, Endri, « Formula e Pagës së Magjistratëve », Academia.edu, punim №176599887
+
+[[PAGEBREAK]]
+
+## SHTOJCA A. FJALORI I SIMBOLEVE DHE I SHKURTESAVE
+
+| Simboli | Kuptimi | Njësia |
+|---|---|---|
+| R_t | Paga referuese bazë në muajin t | lekë/muaj bruto |
+| R*_0 | Baza e riparuar në 1.4.2023 | lekë/muaj bruto |
+| R_paguar | Paga referuese bazë e paguar faktikisht | lekë/muaj bruto |
+| R_L95 | Paga referuese bazë sipas Ligjit №95/2026 | lekë/muaj bruto |
+| P | Paga e Presidentit të Republikës | lekë/muaj bruto |
+| κ | Koeficienti R/P | numër i pastër |
+| Ref_t, Ref_0 | Paga e referencës civile (I-2 + 14.000) në muajin t dhe në 4.2023 | lekë/muaj |
+| W | Paga mujore bruto totale e magjistratit | lekë/muaj bruto |
+| ω | Shumëzuesi i profilit, W/R | numër i pastër |
+| γ, λ, δ, y | Shtesa e grupit, drejtuese, GJKKO/SPAK; vitet e vjetërsisë | numra të pastër; vite |
+| L, U | Kufijtë e korridorit të § 109 | lekë/muaj |
+| I_t | Indeksi i çmimeve të konsumit | indeks |
+| π, ρ | Inflacioni dhe rritja e referencës, kumulative ndërmjet dy datave | përqindje |
+| τ | Data e rishikimit të fundit | muaj |
+| A (në formula) | Prapambetja e akumuluar | lekë bruto |
+| N_R | Njësi-R: kostoja mujore e sistemit për 1 lek rritje të R | magjistratë-ekuivalentë |
+| c | Norma e kontributeve të punëdhënësit | përqindje |
+| ΔC | Kosto shtesë vjetore | lekë/vit |
+| C1–C7 | Kufizimet e modelit (Tabela 4) | — |
+| K1–K18 | Kërkesat e vendimit (Shtojca C) | — |
+| A, A′, B | Skenarët juridikë për aktet e Këshillave | — |
+| S1, S2 | Skenarët e stilizuar të projeksionit: referencë e ngrirë dhe inflacion 3%; referencë +5% dhe inflacion 2% | — |
+| A0–A5, A4L, A4θ | Alternativat e Kreut IV | — |
+| Hendek | Pjesa e prapambetjes që mbetet e papaguar brenda kalendarit | lekë |
+| V35, V15, L95 | Vendimet e Gjykatës Kushtetuese me №35/2022 dhe №15/2026; Ligji me №95/2026 | — |
+
+*Tabela A1. Fjalori i simboleve dhe i shkurtesave.*
+
+## SHTOJCA B. LLOGARITJET E RIPRODHUESHME
+
+Të gjitha shifrat e studimit dalin nga skriptet e mëposhtme, të cilat ekzekutohen me komandën python3 dhe prodhojnë skedarë CSV. Skripti faza2d_testet.py i rillogarit radhazi të gjitha skriptet e Fazës 2, ndërsa faza3_kontrolli.py kontrollon që çdo numër i tekstit të gjendet në skedarët e rezultateve.
+
+| Skripti | Çfarë llogarit | Rezultati |
+|---|---|---|
+| faza1_llogaritjet.py | Seritë e R, korridori, struktura W, validimi me KLSH, kalibrimi N_R | faza1_rezultatet.csv |
+| faza1_thesari.py | Pagesat e Thesarit dhe paga neto për frymë | faza1_thesari.csv, faza1_thesari_per_fryme.csv |
+| faza1_instat.py, faza1_hicp.py | Paga mesatare dhe indekset e çmimeve | faza1_instat_pagat_tremujore.csv, faza1_ichk_mujor.csv |
+| faza2a_model.py | Kufizimet C1–C6, rruga minimale, prapambetja, kostoja | faza2a_rezultatet.csv, faza2a_rruget_min.csv |
+| faza2_burimet_shtese.py | Kategoritë e lidhura, pensioni suplementar | faza2_burimet_shtese.csv |
+| faza2b_alternativat.py | Alternativat A0–A5, testet, pagat totale | faza2b_*.csv |
+| faza2c_paketa.py, faza2c_lp.py | Formula e niveleve, testet kumulative, kalendari me programim linear | faza2c_*.csv |
+| faza2d_testet.py | Analiza fiskale, testi historik, stresi, konsistenca | faza2d_*.csv |
+| faza3_rishikim.py | Ndjeshmëria e korridorit, projeksioni, shkasi, kostoja e gjyqtarëve, detyrimet e trashëguara, shembulli individual, menyja, parametrat, pensioni | faza3_rishikim.csv, faza3_projeksion.csv, faza3_rruget_grafik.csv |
+| faza3_grafik.py | Figura 1 | faza3_figura1.png |
+| faza3_prapambetje.py, faza3_kontrolli.py | Prapambetja individuale; kontrolli i numrave të tekstit | faza3_prapambetje_individuale.csv, faza3_konsistenca.csv |
+
+*Tabela B1. Skriptet e llogaritjeve.*
+
+Tre shembuj të riprodhueshëm ilustrojnë mënyrën e llogaritjes. Së pari, paga referuese bazë më 1.1.2026: indeksi i dhjetorit 2025 është 101,0 dhe ai i marsit 2023 është 95,8, prandaj faktori i inflacionit është 1,05428, ndërsa faktori i referencës është 236.425 / 231.000 = 1,02349; rrjedhimisht, R = 231.000 × 1,05428 = 243.539 lekë. Së dyti, paga totale e një gjyqtari të shkallës së dytë me 15 vjet vjetërsi: ω = 1,98 + 0,02 × 15 = 2,28, prandaj W = 2,28 × 243.539 = 555.268 lekë. Së treti, kostoja shtesë vjetore ndaj Ligjit me №95/2026 në vitin 2026: ΔC = 12 × 3.954 × (243.539 − 165.537,5) = 3,70 miliardë lekë.
+
+## SHTOJCA C. MATRICA E PLOTË E KËRKESAVE
+
+| K | Kërkesa | Burimi | Statusi | Formalizimi | Si e plotëson paketa |
+|---|---|---|---|---|---|
+| K1 | Ligj brenda 31.7.2026 | Disp. 3; § 109 | (a) | Rregull kalimtar | Efekt nga 1.4.2023; vakumi mbulohet; kompensim IÇK |
+| K2 | Rregullat themelore me ligj, objektive dhe të parashikueshme | §§ 71, 76–77 | (a) | Asnjë parametër pa kriter ligjor | Baza, formula, referenca, burimi, datat, shkasi në ligj |
+| K3 | Konsultim efektiv | §§ 76, 98 | (a) | Garanci procedurale | Neni 12/4: 30 ditë, përgjigje e arsyetuar |
+| K4 | Pa ulje të hapur ose të fshehtë, as ngrirje të shënjestruar | §§ 57, 80–82, 94, 104–108 | (a) | C3, C4 | R ≥ R_{t−1} dhe R ≥ R*_0 · Ref_t / Ref_0 |
+| K5 | Paga ndjek fatin e referencës | § 92 | (a) | C4 | Komponenti i referencës, në kohë reale |
+| K6 | Riparimi i uljes së fshehtë | § 109 | (a) | C1 | Baza 231.000 lekë nga 1.4.2023 |
+| K7 | Brenda limiteve të dy referencave | § 109 | (a) për tekstin; (b) për korridorin | C1–C2 | Brenda korridorit në çdo llogaritje të Tabelës 1a |
+| K8 | Referencë që rritet herë pas here dhe indeksohet | § 108 | (a), udhëzues | — | Rrjeta civile + IÇK; jo paga e Presidentit |
+| K9 | Mbrojtje nga inflacioni, pa vonesë të zgjatur | §§ 83–85, 106 | (a) për detyrimin; (b)/(e) për masën | C5 | Rregulli i niveleve; rishikim dyvjeçar; shkas |
+| K10 | Ndjekja e IÇK-së njëlloj si për kategoritë e tjera | §§ 84, 109 | (a) | — | Masë e përgjithshme vetëm sipas Nenit 12/3 |
+| K11 | Përshtatje me zhvillimin ekonomik dhe me pagat e tjera | §§ 94, 102, 104 | (a); e kontestuar nga pakica | — | Raport dyvjeçar; vendim i arsyetuar mbi 5 pikë diferencë |
+| K12 | Efekte nga 1.4.2023, skemë e arsyeshme përshtatjeje | § 110 | (a) | A = ω · Σ (R − R_paguar) | 13,84 mld; 2027–2029; kompensim IÇK |
+| K13 | Rregulli i paracaktuar për prapambetjet | § 110 | (a) | C7 (skenarët A dhe A′) | Baza = formula e § 110 |
+| K14 | Paga totale dhe hierarkia | §§ 87–88, 111 | (a) | W = ω · R | Koeficientët e pandryshuar |
+| K15 | Pagat e GJKKO/SPAK nuk janë pikë referimi | § 87 | (a) | Përjashtim nga krahasimet | Përdoren vetëm për koston |
+| K16 | Pabarazitë brenda Gjykatës së Lartë | § 111 | (a) si rekomandim | — | Jashtë paketës; ndërhyrje e veçantë në koeficientë |
+| K17 | Ulje vetëm sipas Nenit 138 « a » | §§ 78–81 | (a) | Gjashtë kushte kumulative | Neni 12/3, me dysheme reale dhe rikuperim nivelesh |
+| K18 | Pa hapësira ndikimi ose presioni | §§ 77, 81 | (a) | Automatizëm | Publikim deklarativ; pagesë e detyrueshme; ndikim vetëm për rritje |
+
+*Tabela C1. Matrica e plotë e kërkesave K1–K18.*
