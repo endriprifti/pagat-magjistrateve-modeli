@@ -258,6 +258,12 @@ out("k", "W G2 15 vjet me R të rrumbullakuar 243.539", faktori_W("G2", 15) * 24
 out("k", "R26 e parrumbullakuar", R26)
 out("k", "Muaj me inflacion vjetor ≥ 4% radhazi, 3.2022–9.2023", 19)
 out("k", "Muaj me inflacion vjetor > 4% në atë periudhë", 18)
+# Tabela 3: vlerat e prillit 2023 (paga për pozicion sipas VKM 325 origjinal + 14.000), mbi të cilat zbatohet korridori
+out("k", "I-2 + 14.000, prill 2023 (lekë)", 217_000 + SHTESA_GRUP)
+out("k", "I-4 + 14.000, prill 2023 (lekë)", 180_000 + SHTESA_GRUP)
+out("k", "I-5 + 14.000, prill 2023 (lekë)", 170_000 + SHTESA_GRUP)
+# Konventa e indeksit: teksti mat me të njëjtin muaj (9.2022→8.2026); projektligji me muajin paraardhës (8.2022→7.2026)
+out("k", "Vlera reale e 152.700 me konventën e ligjit, I(7.2026)/I(8.2022) (lekë)", 152_700 * ICHK["2026-07"] / ICHK["2022-08"])
 # Detyrimi i Nenit 6, pika 2: hendeku shlyhet në vitin 2029 mbi tavanin vjetor (kryegjë)
 for emri, tavan, hendek in (("tavan 4 mld/vit", 4.0, 1.839449), ("tavan 3 mld/vit", 3.0, 4.839449)):
     out("k", f"{emri}: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld)", tavan + hendek)

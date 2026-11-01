@@ -26,7 +26,7 @@ ax.plot(x, [v if d <= CUT else None for d, v in zip(x, y)], color=col, ls=ls, lw
 ax.plot(x, [v if d >= CUT else None for d, v in zip(x, y)], color=col, ls=(0, (1, 1.2)), lw=2.6, drawstyle=ds,
         label="R e paguar, e supozuar 10–12.2026 (= L95)", zorder=6)
 ax.axvline(date(2026, 10, 1), color="#b5b4ae", lw=0.8, ls=":", zorder=1)
-ax.annotate("të dhënat\nderi 5.10.2026", (date(2026, 10, 1), 118), xytext=(-3, 0), textcoords="offset points",
+ax.annotate("regjistrat e Thesarit\nderi 5.10.2026", (date(2026, 10, 1), 118), xytext=(-3, 0), textcoords="offset points",
             ha="right", va="bottom", fontsize=6.5, color="#52514e")
 ax.set_ylabel("mijë lekë në muaj, bruto", color="#52514e")
 ax.set_ylim(100, 260)
