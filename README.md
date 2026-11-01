@@ -6,12 +6,12 @@ Kodi i riprodhueshëm i studimit *« Paga e magjistratëve pas Vendimit të Gjyk
 
 ## Versioni i cituar në punim
 
-Punimi i referohet commit-it **`6d13c33`** të kësaj depoje (1 nëntor 2026), i cili përmban kodin, të dhënat dhe rezultatet e cituara. Për ta riprodhuar saktësisht:
+Punimi i referohet commit-it **`ffdcd1e`** të kësaj depoje (1 nëntor 2026), i cili përmban kodin, të dhënat dhe rezultatet e cituara. Për ta riprodhuar saktësisht:
 
 ```bash
 git clone https://github.com/endriprifti/pagat-magjistrateve-modeli
 cd pagat-magjistrateve-modeli
-git checkout 6d13c33
+git checkout ffdcd1e
 ```
 
 ## Instalimi
