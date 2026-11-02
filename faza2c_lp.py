@@ -7,7 +7,7 @@ Kalendari vendos vetëm KUR paguhet, jo SA.
 
 Rregulli (përcaktues, pa optimizim): në çdo vit y, kufiri vjetor i kryegjësë B_y shpenzohet për detyrimin e
 muajit më të vjetër ende të pashlyer; një muaj i mëvonshëm fillon të paguhet vetëm pasi muaji paraardhës
-është shlyer plotësisht. Kufiri vjetor nuk mund të jetë më i ulët se p_min · A (Neni 6/2: 10% e detyrimit);
+është shlyer plotësisht. Kufiri vjetor nuk mund të jetë më i ulët se p_min · A (Neni 6/2: 20% e detyrimit);
 kufiri efektiv kthehet në rezultat. Kjo dysheme nuk detyron pagesë minimale kur detyrimi shlyhet më herët.
 Pjesa që mbetet pas vitit të fundit raportohet si « hendek para shlyerjes përfundimtare »; sipas Nenit 6/2 ajo
 shlyhet në vitin 2029 mbi kufirin (faza2d_testet.py e përfshin këtë pagesë në gamën fiskale).
@@ -63,14 +63,14 @@ def main():
         rez.append({"treguesi": t, "vlera": round(v, 4) if isinstance(v, float) else v, "shenim": sh})
     V3, V2 = [2027, 2028, 2029], [2027, 2028]
     for emri, vitet, B_v, p in [
-        ("Bazë: 5 mld/vit, 2027–2029, p_min 10%", V3, 5e9, 0.10),
-        ("4 mld/vit (i pamjaftueshëm)", V3, 4e9, 0.10),
-        ("7 mld/vit", V3, 7e9, 0.10),
-        ("Pa tavan", V3, 1e12, 0.10),
+        ("Bazë: 5 mld/vit, 2027–2029, p_min 20%", V3, 5e9, 0.20),
+        ("4 mld/vit (i pamjaftueshëm)", V3, 4e9, 0.20),
+        ("7 mld/vit", V3, 7e9, 0.20),
+        ("Pa tavan", V3, 1e12, 0.20),
         ("5 mld/vit, p_min 0%", V3, 5e9, 0.0),
-        ("5 mld/vit, p_min 20%", V3, 5e9, 0.20),
-        ("Skema e Këshillave: 2027–2028, 7 mld/vit", V2, 7e9, 0.10),
-        ("Skema e Këshillave: 2027–2028, 5 mld/vit", V2, 5e9, 0.10),
+        ("5 mld/vit, p_min 10%", V3, 5e9, 0.10),
+        ("Skema e Këshillave: 2027–2028, 7 mld/vit", V2, 7e9, 0.20),
+        ("Skema e Këshillave: 2027–2028, 5 mld/vit", V2, 5e9, 0.20),
     ]:
         r = zgjidh(vitet, {y: B_v for y in vitet}, p)
         row = {"skenari": emri, "A_total_mld": round(r["A"] / 1e9, 4),
@@ -95,7 +95,7 @@ def main():
     out("Muajt e detyrimit (numri)", len(det))
     # ndjeshmëria ndaj N_R
     for k in ("i_ulet", "i_larte"):
-        r = zgjidh(V3, {y: 5e9 for y in V3}, 0.10, n_r=N_R[k])
+        r = zgjidh(V3, {y: 5e9 for y in V3}, 0.20, n_r=N_R[k])
         out(f"N_R {k}, 5 mld/vit | A_total_mld", r["A"] / 1e9)
         out(f"N_R {k}, 5 mld/vit | hendeku_mld", r["hendeku"] / 1e9)
         out(f"N_R {k}, 5 mld/vit | vonesa_mesatare_muaj", r["vonesa_mesatare_muaj"])

@@ -91,7 +91,8 @@ TOL = 1e-9   # pragjet krahasohen me tolerancë, që π e barabartë me pragun t
 def R_mujore(pi_seq, rho, shkas):
     """Rruga mujore e paketës 1.2026–12.2031 sipas Nenit 12/2: rishikime të rregullta 1.2028 dhe 1.2030 dhe,
     kur shkas=True, rishikim i jashtëzakonshëm në muajin pas atij në të cilin, njëkohësisht, rritja kumulative
-    e IÇK nga muaji i indeksit të rishikimit të fundit e kalon 4% dhe inflacioni vjetor e kalon 4% (objektivi 3% + 1 p.p.).
+    e IÇK nga muaji i indeksit të rishikimit të fundit e kalon 4% dhe inflacioni vjetor e kalon 4% (objektivi 3% + 1 p.p.),
+    me kusht që vlera sipas shkronjës « b » ta kalojë R e muajit paraardhës.
     Pa shkas, R është konstante brenda vitit dhe përputhet me rruget_vjetore."""
     m_mat, f_I, R_prev, R = "2025-12", F_ICHK_2026, 243_538.6221, {}
     for m in muajt("2026-01", "2031-12"):
@@ -100,7 +101,8 @@ def R_mujore(pi_seq, rho, shkas):
         k = (int(mp[:4]) - int(m_mat[:4])) * 12 + int(mp[5:]) - int(m_mat[5:])
         kum = I_muaj(mp, pi_seq) / I_muaj(m_mat, pi_seq) - 1
         vjet = I_muaj(mp, pi_seq) / I_muaj(f"{int(mp[:4]) - 1:04d}-{mp[5:]}", pi_seq) - 1
-        jasht = shkas and not rregull and k > 0 and kum > 0.04 + TOL and vjet > 0.04 + TOL
+        jasht = (shkas and not rregull and k > 0 and kum > 0.04 + TOL and vjet > 0.04 + TOL
+                 and R0_PAKETE * I_muaj(mp, pi_seq) / I_BAZA > R_prev)      # Neni 12/2/3: vetëm kur shkronja « b » e kalon R e muajit paraardhës
         if rregull or jasht:
             f_I = I_muaj(mp, pi_seq) / I_BAZA; m_mat = mp
         ref = I2["2026-01"] * (1 + rho) ** (y - 2026) + SHTESA_GRUP
@@ -114,7 +116,7 @@ _lp_cache = {}
 def prapambetje_vjetore(n_r, pi_seq, B=5e9, vitet=(2027, 2028, 2029)):
     key = (n_r, B, vitet)
     if key not in _lp_cache:
-        _lp_cache[key] = lp.zgjidh(list(vitet), {y: B for y in vitet}, 0.10, n_r=n_r)
+        _lp_cache[key] = lp.zgjidh(list(vitet), {y: B for y in vitet}, 0.20, n_r=n_r)
     r = _lp_cache[key]
     pag = {y: 0.0 for y in VITET}; komp = {y: 0.0 for y in VITET}; pag_m = {}
     for m, y, v in r["kalendari"]:
@@ -288,7 +290,7 @@ def main():
         stres.append({"skenari": emri, "humbja_reale_maks_mujore": round(hm, 4), "muaji": mm_, "rishikimet": " ".join(rish)})
     # S-c: rënie e të ardhurave → tavan 3 mld/vit për prapambetjet
     for vitet in ((2027, 2028, 2029), (2027, 2028, 2029, 2030, 2031)):
-        r = lp.zgjidh(list(vitet), {y: 3e9 for y in vitet}, 0.10)
+        r = lp.zgjidh(list(vitet), {y: 3e9 for y in vitet}, 0.20)
         tag = f"S-c: tavan 3 mld/vit, {vitet[0]}–{vitet[-1]}"
         out("9.5", f"{tag} | hendeku (mld)", r["hendeku"] / 1e9)
         out("9.5", f"{tag} | vonesa mesatare (muaj)", r["vonesa_mesatare_muaj"])

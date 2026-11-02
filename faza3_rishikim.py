@@ -109,7 +109,8 @@ def sim(pi_seq, rho, rregulli=None, nga="2026-01", deri="2031-12", m_mat0="2025-
         if rregulli == "fiks":
             jasht = not rregull and k > 0 and cum > 0.04
         elif rregulli == "vjetor":      # π kumulative > 4% DHE inflacioni vjetor > 4% (target + 1 p.p.)
-            jasht = not rregull and k > 0 and cum > 0.04 and vjetor > 0.04
+            jasht = (not rregull and k > 0 and cum > 0.04 and vjetor > 0.04
+                     and R0 * I_m(mp, pi_seq) / I_baza > R_prev)    # vetëm kur shkronja « b » e kalon R e muajit paraardhës
         else:
             jasht = False
         if rregull or jasht:
@@ -292,7 +293,7 @@ for alt in ("A0", "A3"):
     out("k", f"{alt} | S2, P pa tavan | ndaj referencës së bazës", R_ / (R0_ * ref30 / REF0) - 1)
 # R32: kompensimi me indeksin e fundit të publikuar në datën e pagesës (1 korrik → indeksi i majit)
 import faza2c_lp as lp
-_r = lp.zgjidh([2027, 2028, 2029], {y: 5e9 for y in (2027, 2028, 2029)}, 0.10)
+_r = lp.zgjidh([2027, 2028, 2029], {y: 5e9 for y in (2027, 2028, 2029)}, 0.20)
 def _I_at(m):
     if m in ICHK:
         return ICHK[m]
@@ -302,6 +303,15 @@ for mm, emri in (("07", "indeksi i korrikut (konventa e modelit)"), ("05", "inde
     k_ = sum(v * (_I_at(f"{y}-{mm}") / _I_at(m) - 1) for m, y, v in _r["kalendari"])
     out("k", f"Kompensimi IÇK, kalendari bazë, {emri} (mld)", k_ / 1e9)
     out("k", f"Kompensimi IÇK, kalendari bazë, {emri} / detyrimi", k_ / _r["A"])
+
+# Rikontrolli Gemini (2.11.2026): vlera reale e bazës me konventën e projektligjit, gushti i papaguar, mesi me data të njëjta
+v231_vonese = R0_PAKETE * ICHK["2026-07"] / I0
+out("k", "Vlera reale e 231.000 me indeksin e muajit paraardhës, I(7.2026)/I(3.2023) (lekë)", v231_vonese)
+out("k", "Paketa 8.2026 ndaj kësaj vlere − 1", R26 / v231_vonese - 1)
+out("k", "Diferenca e gushtit 2026 kur u pagua 156.825 në vend të 236.425 (lekë për njësi-R)", R_KESH - R_33_2026)
+out("k", "E njëjta për G2, 15 vjet (lekë)", faktori_W("G2", 15) * (R_KESH - R_33_2026))
+out("k", "Mesi me data të njëjta, 2023: (161.500 + 231.000) / 2 (lekë)", (R_95 + R0_PAKETE) / 2)
+out("k", "Mesi me data të njëjta, 2026: (165.537,5 + 236.425) / 2 (lekë)", (R_95_2026 + R_KESH) / 2)
 
 # ---------------- grafiku: rrugët 2019–2026 ----------------
 graf = []
