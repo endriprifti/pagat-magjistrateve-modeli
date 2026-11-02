@@ -157,7 +157,7 @@ def main():
                          "kosto_kalimtare": round(kal), "shlyerja_e_mbetjes_2029": round(shlyerja),
                          "totali": round(tot), "totali_pa_shkas_dhe_pa_shlyerje": round(perm + kal),
                          "pjesa_e_fondit_2026": round(tot / PAGA_SHTET_2026, 5),
-                         "hendeku_prapambetjes_pas_2029": round(hend * (1 + c)) if y == 2029 else 0})
+                         "hendeku_para_shlyerjes_2029": round(hend * (1 + c)) if y == 2029 else 0, "mbetja_pas_shlyerjes": 0})
     shkruaj("faza2d_fiskale_grid.csv", grid)
     qend = [g for g in grid if g["pi"] == 0.03 and g["rho"] == 0.025 and g["N_R"] == "qendror" and g["c"] == 0.0]
     for g in qend:
@@ -191,9 +191,9 @@ def main():
     for y in VITET:
         out("9.1", f"Gama | {y} | rishikimet e jashtëzakonshme maks (mld)",
             max(g["kosto_rishikimeve_te_jashtezakonshme"] for g in grid if g["viti"] == y) / 1e9)
-    hendeqe = [g for g in grid if g["hendeku_prapambetjes_pas_2029"] > 0]
-    out("9.1", "Kombinime me hendek prapambetjesh pas 2029 (B = 5 mld/vit)", len({(g["N_R"], g["c"]) for g in hendeqe}))
-    out("9.1", "Hendeku maks (mld)", max([g["hendeku_prapambetjes_pas_2029"] for g in grid] + [0]) / 1e9)
+    hendeqe = [g for g in grid if g["hendeku_para_shlyerjes_2029"] > 0]
+    out("9.1", "Kombinime me hendek para shlyerjes përfundimtare në 2029 (B = 5 mld/vit)", len({(g["N_R"], g["c"]) for g in hendeqe}))
+    out("9.1", "Hendeku maks para shlyerjes përfundimtare në 2029 (mld)", max([g["hendeku_para_shlyerjes_2029"] for g in grid] + [0]) / 1e9)
     # ndjeshmëria e kostos së përhershme 2031 ndaj ρ (π 3%, N_R qendror)
     for rho in (0.0, 0.025, 0.05):
         g = next(g for g in grid if g["pi"] == 0.03 and g["rho"] == rho and g["N_R"] == "qendror" and g["c"] == 0 and g["viti"] == 2031)

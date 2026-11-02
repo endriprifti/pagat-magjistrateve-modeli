@@ -280,6 +280,7 @@ assert _ws.cell(6, 2).value == "Gjithsej"
 R26_plote = R0_PAKETE * _tab3["12-25"] / _tab3["03-23"]
 out("k", "R 1.2026 me indekset me saktësi të plotë, INSTAT tabela 3 (lekë)", R26_plote)
 out("k", "Diferenca ndaj R me indekset me një shifër dhjetore (lekë)", R26_plote - R26)
+out("k", "Kosto vjetore e diferencës, N_R qendror (mld)", (R26_plote - R26) * 12 * N_R["qendror"] / 1e9)
 # R03: krahasuesi i L95 në skenarin S2 kur paga e Presidentit ndjek ρ pa tavan (leximi R = 0,38 × P)
 for alt in ("A0", "A3"):
     pi_, rho_ = 0.02, 0.05

@@ -21,12 +21,14 @@ def gjendet(x, tol):
         if i < len(vals) and vals[i] <= c + t:
             return True
     return False
-pat = re.compile(r"(?<![\w§/.№-])\d{1,3}(?:\.\d{3})+(?:,\d+)?(?![\d.])|(?<![\w§/.№-])\d+,\d+(?!\d)")
+# numrat me ndarës mijëshe (pikë, ose hapësirë/hapësirë e pandashme si në tekstin e projektligjit) ose me presje dhjetore
+pat = re.compile(r"(?<![\w§/.,№-])\d{1,3}(?:\.\d{3})+(?:,\d+)?(?![\d.])|(?<![\w§/.,№-])\d{1,3}(?:[ \u00a0]\d{3})+(?:,\d+)?(?![\d.])"
+                 r"|(?<![\w§/.№-])\d+,\d+(?!\d)")
 rez, gabime = [], 0
 for fp in sys.argv[1:]:
     for nr, line in enumerate(open(fp, encoding="utf-8"), 1):
         for tok in pat.findall(line):
-            s = tok.replace(".", "").replace(",", ".")
+            s = tok.replace(".", "").replace(" ", "").replace("\u00a0", "").replace(",", ".")
             x = float(s); dec = len(s.split(".")[1]) if "." in s else 0
             ok = gjendet(x, 0.5 * 10 ** (-dec) + 1e-9) or gjendet(x, 0.5 * 10 ** (-dec) * 1.0001 + 0.5)
             rez.append({"skedari": fp, "rreshti": nr, "numri": tok, "gjendet": ok})

@@ -1,26 +1,22 @@
 """
-Faza 2c — kalendari i shlyerjes së prapambetjeve me programim linear (scipy.optimize.linprog).
+Faza 2c — kalendari i shlyerjes së prapambetjeve sipas rregullit « së pari muajt më të vjetër » (Neni 6/2 i projektligjit).
 
 E drejta (ekzistenca dhe masa) llogaritet veçmas: a_m = N_R · (R_paketës,m − R_paguar,m)⁺ për çdo
 muaj m nga 4.2023 deri 12.2026 (supozim d: paketa hyn në fuqi më 1.1.2027).
 Kalendari vendos vetëm KUR paguhet, jo SA.
 
-Variablat: x[m,y] ≥ 0 = shuma e muajit m e paguar në vitin y; h[m] ≥ 0 = hendeku (e papaguar deri 2029).
-Kufizimet:
-  (K-a) Σ_y x[m,y] + h[m] = a_m                     shlyerje e plotë; hendeku raportohet, detyrimi nuk ulet
-  (K-b) Σ_m x[m,y] ≤ B_y                            tavani buxhetor vjetor (parametër)
-  (K-c) B_y ≥ p_min · A                             dyshemeja e tavanit (Neni 6/2 i projektligjit): kufiri vjetor
-                                                    nuk mund të jetë më i ulët se 10% e detyrimit; nuk detyron
-                                                    pagesë minimale kur detyrimi mund të shlyhet më herët
-  (K-d) pjesa e paguar e muajit më të vjetër ≥ pjesa e paguar e muajit pasardhës, në çdo vit (prioritet)
-Objektivi: min [ Σ x[m,y] · vonesa(m,y)² ] / A  +  M · Σ h[m]
-  (çdo lek peshohet me vonesën e vet: një muaj shtesë pritjeje kushton më shumë për detyrimin më të vjetër)
-  vonesa = muajt nga muaji i detyrimit deri në mes të vitit të pagesës (1 korrik).
+Rregulli (përcaktues, pa optimizim): në çdo vit y, kufiri vjetor i kryegjësë B_y shpenzohet për detyrimin e
+muajit më të vjetër ende të pashlyer; një muaj i mëvonshëm fillon të paguhet vetëm pasi muaji paraardhës
+është shlyer plotësisht. Kufiri vjetor nuk mund të jetë më i ulët se p_min · A (Neni 6/2: 10% e detyrimit);
+kufiri efektiv kthehet në rezultat. Kjo dysheme nuk detyron pagesë minimale kur detyrimi shlyhet më herët.
+Pjesa që mbetet pas vitit të fundit raportohet si « hendek para shlyerjes përfundimtare »; sipas Nenit 6/2 ajo
+shlyhet në vitin 2029 mbi kufirin (faza2d_testet.py e përfshin këtë pagesë në gamën fiskale).
+Vonesa mesatare = muajt nga muaji i detyrimit deri në 1 korrik të vitit të pagesës, vetëm për kryegjënë e paguar.
+Kompensimi i vlerës reale (d): faktori IÇK nga muaji i detyrimit deri në korrikun e vitit të pagesës;
+IÇK reale deri 8.2026, pastaj 3%/vit (objektivi i BSH).
 Dalja: faza2c_lp_kalendari.csv, faza2c_lp_skenaret.csv, faza2c_lp_rezultatet.csv
 """
 import csv
-import numpy as np
-from scipy.optimize import linprog
 from faza2a_model import DIR, N_R, ICHK, muajt
 from faza2c_paketa import rruga_paketes
 
@@ -31,53 +27,35 @@ def detyrimet(n_r=N_R["qendror"]):
     rr = rruga_paketes("2026-12")
     return [(r["muaji"], n_r * max(r["R"] - r["R_paguar"], 0.0)) for r in rr if r["R"] - r["R_paguar"] > 0.5]
 
-def zgjidh(vitet, B, p_min, n_r=N_R["qendror"], M=1e3):
+def I_at(m):
+    if m in ICHK:
+        return ICHK[m]
+    k = muaj_indeks(m) - muaj_indeks("2026-08")
+    return ICHK["2026-08"] * 1.03 ** (k / 12)
+
+def zgjidh(vitet, B, p_min, n_r=N_R["qendror"]):
+    """Kalendari sipas rregullit « së pari muajt më të vjetër ». B: viti → kufiri vjetor i kryegjësë (lekë)."""
     det = detyrimet(n_r)
-    muajt_d = [m for m, _ in det]; a = np.array([v for _, v in det]) / 1e9; A = a.sum()   # në mld lekë (shkallëzim numerik)
-    B = {y: max(b / 1e9, p_min * A) for y, b in B.items()}         # (K-c): dyshemeja e tavanit, jo pagesë minimale
-    nM, nY = len(det), len(vitet)
-    nx = nM * nY
-    idx = lambda i, j: i * nY + j
-    vonesa = np.array([[muaj_indeks(f"{y}-07") - muaj_indeks(m) for y in vitet] for m in muajt_d])
-    c = np.concatenate([(vonesa.flatten() ** 2) / A, np.full(nM, M * 100 / A)])   # vonesa e ponderuar me vetveten: pritjet e gjata kushtojnë më shumë
-    # Barazimet (K-a)
-    Aeq = np.zeros((nM, nx + nM)); beq = a.copy()
-    for i in range(nM):
-        for j in range(nY):
-            Aeq[i, idx(i, j)] = 1
-        Aeq[i, nx + i] = 1
-    Aub, bub = [], []
-    for j, y in enumerate(vitet):
-        r = np.zeros(nx + nM)
-        for i in range(nM):
-            r[idx(i, j)] = 1
-        Aub.append(r.copy()); bub.append(B[y])                       # (K-b)
-    for j in range(nY):                                                # (K-d)
-        for i in range(nM - 1):
-            r = np.zeros(nx + nM)
-            for jj in range(j + 1):
-                r[idx(i, jj)] = -a[i + 1]
-                r[idx(i + 1, jj)] = a[i]
-            Aub.append(r); bub.append(0.0)
-    res = linprog(c, A_ub=np.array(Aub), b_ub=np.array(bub), A_eq=Aeq, b_eq=beq,
-                  bounds=[(0, None)] * (nx + nM), method="highs")
-    assert res.status == 0, res.message
-    x = res.x[:nx].reshape(nM, nY); h = res.x[nx:]
-    paguar = x.sum(axis=0)
-    vonesa_mes = (x * vonesa).sum() / x.sum() if x.sum() > 0 else 0.0
-    # Kompensimi i vlerës reale (d): faktori IÇK nga muaji i detyrimit deri në pagesë;
-    # IÇK reale deri 8.2026, pastaj 3%/vit (objektivi i BSH).
-    def I_at(m):
-        if m in ICHK:
-            return ICHK[m]
-        k = muaj_indeks(m) - muaj_indeks("2026-08")
-        return ICHK["2026-08"] * 1.03 ** (k / 12)
-    komp = sum(x[i, j] * (I_at(f"{y}-07") / I_at(muajt_d[i]) - 1)
-               for i in range(nM) for j, y in enumerate(vitet))
-    x, h, paguar, komp, A = x * 1e9, h * 1e9, paguar * 1e9, komp * 1e9, A * 1e9
-    return {"A": A, "paguar": dict(zip(vitet, paguar)), "hendeku": h.sum(),
+    A = sum(v for _, v in det)
+    B_ef = {y: max(B[y], p_min * A) for y in vitet}          # dyshemeja e kufirit (Neni 6/2)
+    mbetja = [[m, v] for m, v in det]
+    kal = []
+    for y in vitet:
+        b = B_ef[y]
+        for d in mbetja:
+            if b <= 0:
+                break
+            if d[1] <= 0:
+                continue
+            x = min(d[1], b); d[1] -= x; b -= x
+            kal.append((d[0], y, x))
+    paguar = {y: sum(x for _, yy, x in kal if yy == y) for y in vitet}
+    tot = sum(paguar.values())
+    vonesa_mes = (sum(x * (muaj_indeks(f"{y}-07") - muaj_indeks(m)) for m, y, x in kal) / tot) if tot > 0 else 0.0
+    komp = sum(x * (I_at(f"{y}-07") / I_at(m) - 1) for m, y, x in kal)
+    return {"A": A, "paguar": paguar, "hendeku": sum(v for _, v in mbetja), "kufiri_efektiv": B_ef,
             "vonesa_mesatare_muaj": vonesa_mes, "kompensimi_IÇK": komp,
-            "kalendari": [(muajt_d[i], vitet[j], x[i, j]) for i in range(nM) for j in range(nY) if x[i, j] > 1]}
+            "kalendari": [(m, y, x) for m, y, x in kal if x > 1]}
 
 def main():
     rez, sken, kal = [], [], []
@@ -98,7 +76,7 @@ def main():
         row = {"skenari": emri, "A_total_mld": round(r["A"] / 1e9, 4),
                **{f"paguar_{y}_mld": round(r["paguar"][y] / 1e9, 4) for y in vitet},
                "hendeku_mld": round(r["hendeku"] / 1e9, 4),
-               "vonesa_mesatare_muaj": round(r["vonesa_mesatare_muaj"], 2),
+               "vonesa_mesatare_muaj": round(r["vonesa_mesatare_muaj"], 2),  # vetëm kryegjëja e paguar
                "kompensimi_IÇK_mld": round(r["kompensimi_IÇK"] / 1e9, 4),
                "kompensimi_si_pjese_e_A": round(r["kompensimi_IÇK"] / r["A"], 4)}
         sken.append(row)

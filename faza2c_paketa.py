@@ -125,17 +125,17 @@ def main():
 
     # 5. Mekanizmi 138/a: pezullim i komponentit IÇK për 2 vjet (rishikimi 1.2028), referenca e ngrirë, IÇK 4%/vit (d)
     I_v = [1.04 ** k for k in range(0, 7)]   # 2026 = 1
-    R_dhj26 = R0
+    R_1_2026 = R0          # R nga 1.1.2026 (pas rishikimit të parë), pika e nisjes së eksperimentit
     # pa pezullim: 1.2028 dhe 1.2030 indeksohen plotësisht
-    R_pa = {2028: R_dhj26 * I_v[2], 2030: R_dhj26 * I_v[4]}
+    R_pa = {2028: R_1_2026 * I_v[2], 2030: R_1_2026 * I_v[4]}
     # me pezullim në 1.2028 (vetëm), rregulli i niveleve rikthen nivelin në 1.2030 (rikuperim)
-    R_rik = {2028: R_dhj26, 2030: R_dhj26 * I_v[4]}
+    R_rik = {2028: R_1_2026, 2030: R_1_2026 * I_v[4]}
     # pa rikuperim (rivendosje e bazës): humbje e përhershme
-    R_pr = {2028: R_dhj26, 2030: R_dhj26 * I_v[4] / I_v[2]}
+    R_pr = {2028: R_1_2026, 2030: R_1_2026 * I_v[4] / I_v[2]}
     for emri, d in (("pa pezullim", R_pa), ("pezullim me rikuperim (paketa)", R_rik), ("pezullim pa rikuperim", R_pr)):
-        out("8.8-138a", f"{emri} | humbja reale 2028–2029", d[2028] / (R_dhj26 * I_v[2]) - 1)
-        out("8.8-138a", f"{emri} | humbja reale nga 2030", d[2030] / (R_dhj26 * I_v[4]) - 1)
-    kursim = 2 * 12 * N_R["qendror"] * (R_dhj26 * I_v[2] - R_dhj26)
+        out("8.8-138a", f"{emri} | humbja reale 2028–2029", d[2028] / (R_1_2026 * I_v[2]) - 1)
+        out("8.8-138a", f"{emri} | humbja reale nga 2030", d[2030] / (R_1_2026 * I_v[4]) - 1)
+    kursim = 2 * 12 * N_R["qendror"] * (R_1_2026 * I_v[2] - R_1_2026)
     out("8.8-138a", "Kursimi buxhetor i pezullimit 2028–2029 (mld, N_R qendror)", kursim / 1e9)
 
     # 6. Korrigjimi periodik K11: të dhëna (c)

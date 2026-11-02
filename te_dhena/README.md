@@ -1,6 +1,6 @@
 # Të dhënat hyrëse
 
-Eksportet origjinale nga të cilat skriptet e Fazës 1 ndërtojnë seritë. Të gjitha u shkarkuan më **7 tetor 2026** (data e verifikimit të studimit). Çdo skedar CSV i Fazës 1 në rrënjën e depos riprodhohet saktësisht nga këto skedarë me komandat e mëposhtme.
+Eksportet origjinale nga të cilat skriptet e Fazës 1 ndërtojnë seritë. Ato u shkarkuan më **7 tetor 2026** (data e verifikimit të studimit), përveç tabelës 3 të IÇK-së me saktësi të plotë, e cila u shkarkua më 2 nëntor 2026 për ndjeshmërinë e Shtojcës B. Çdo skedar CSV i Fazës 1 në rrënjën e depos riprodhohet saktësisht nga këto skedarë me komandat e mëposhtme.
 
 | Dosja / skedari | Burimi | Mbulimi | Skripti | Rezultati |
 |---|---|---|---|---|
@@ -24,5 +24,5 @@ Për të rinxjerrë tekstet nga PDF-të: `for f in te_dhena/instat_pagat/pdf/*.p
 
 ## Shënime
 
-- Regjistri i Thesarit përmban vetëm pagesat e ekzekutuara; muaji i pagës nxirret nga përshkrimi i faturës (`faza1_thesari.py`). Paga e shtatorit 2026 (paguar më 2.10.2026) është e fundit e vrojtuar; muajt tetor–dhjetor 2026 në figurën 1 janë supozim.
+- Regjistri i Thesarit përmban vetëm pagesat e ekzekutuara; muaji i pagës nxirret nga përshkrimi i faturës (`faza1_thesari.py`). Paga e shtatorit 2026 (paguar më 2.10.2026) është e fundit e regjistruar. Rruga e R së paguar në figurën 1 është e rindërtuar: nivelet e akteve deri në dhjetor 2023, nivelet që përputhen me pagesat e agreguara të Thesarit nga janari 2024 deri në shtator 2026 dhe supozim për tetor–dhjetor 2026. Regjistrat e Thesarit nuk e tregojnë drejtpërdrejt pagën referuese të çdo magjistrati.
 - Aktet normative, vendimet e Gjykatës Kushtetuese, raportet e KLSH-së dhe dokumentet parlamentare që citon studimi nuk përfshihen këtu: ato janë dokumente publike, të renditura në bibliografinë e punimit.
