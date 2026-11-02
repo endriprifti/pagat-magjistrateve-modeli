@@ -203,7 +203,7 @@ def main():
     # ============ 2. Testi historik kundërfaktik 1.2019–8.2026 ============
     R0_h = 129_800 + SHTESA_GRUP          # 143.800 = standardi i V35 më 1.1.2019 (V35 §§77, 80) (c)
     def ref_hist(m):
-        if m < "2022-10": return 129_800 + SHTESA_GRUP     # VKM 621, datë 28.9.2022: efekt nga tetori 2022 (d)
+        if m < "2022-09": return 129_800 + SHTESA_GRUP     # VKM 621, datë 28.9.2022, pika III/b: efektet financiare nga 1.9.2022 (c)
         if m < "2023-04": return 138_700 + SHTESA_GRUP
         if m < "2026-01": return I2["2023-04"] + SHTESA_GRUP
         return I2["2026-01"] + SHTESA_GRUP

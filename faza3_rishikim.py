@@ -137,7 +137,7 @@ for emri, ps in (("bazë 3%", baza), ("episod 2022–23", episod), ("4,5% çdo v
 
 # Testimi mbi IÇK reale 2019–2026: rregull kundërfaktik nga 1.2019, matja bazë 12.2018, rishikime 2021/2023/2025
 real = {y: 0.0 for y in range(2019, 2032)}
-ref_h = lambda m: (129_800 + SHTESA_GRUP) if m < "2022-10" else ((138_700 + SHTESA_GRUP) if m < "2023-04" else
+ref_h = lambda m: (129_800 + SHTESA_GRUP) if m < "2022-09" else ((138_700 + SHTESA_GRUP) if m < "2023-04" else   # VKM 621/2022, pika III/b: efekt nga 1.9.2022
                   ((I2["2023-04"] + SHTESA_GRUP) if m < "2026-01" else I2["2026-01"] + SHTESA_GRUP))
 for rr in (None, "fiks", "vjetor"):
     _, h, k, rish = sim(real, 0.0, rr, nga="2019-01", deri="2026-08", m_mat0="2018-12", I_baza=ICHK["2018-12"],
@@ -155,7 +155,7 @@ for om in (2.0, 2.4, 2.8):
 # ---------------- (e) detyrimi i trashëguar 1.2019–3.2023 ----------------
 diff = 0.0
 for m in muajt("2019-01", "2023-03"):
-    std = 143_800 if m < "2022-10" else 152_700
+    std = 143_800 if m < "2022-09" else 152_700
     diff += std - 118_100
 out("e", "Σ (standardi V35 − 118.100), 1.2019–3.2023, lekë për njësi-R", diff)
 out("e", "Muaj", len(muajt("2019-01", "2023-03")))
@@ -165,8 +165,8 @@ for k, n in N_R.items():
 
 # Varianti: nëse nga 10.2022 u pagua 126.300 (II-a pas VKM 621/2022) dhe nga 1.2023 152.700 (V35 në fuqi më 9.1.2023)
 def paguar_var(m):
-    return 118_100 if m < "2022-10" else (126_300 if m < "2023-01" else 152_700)
-diff_v = sum((143_800 if m < "2022-10" else 152_700) - paguar_var(m) for m in muajt("2019-01", "2023-03"))
+    return 118_100 if m < "2022-09" else (126_300 if m < "2023-01" else 152_700)
+diff_v = sum((143_800 if m < "2022-09" else 152_700) - paguar_var(m) for m in muajt("2019-01", "2023-03"))
 out("e", "II-a pas VKM 621/2022 (lekë)", 126_300.0)
 out("e", "Varianti 126.300/152.700: Σ për njësi-R", diff_v)
 for k, n in N_R.items():
@@ -268,6 +268,9 @@ out("k", "Vlera reale e 152.700 me konventën e ligjit, I(7.2026)/I(8.2022) (lek
 for emri, tavan, hendek in (("tavan 4 mld/vit", 4.0, 1.839449), ("tavan 3 mld/vit", 3.0, 4.839449)):
     out("k", f"{emri}: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld)", tavan + hendek)
 
+# R22: indekset e eksportit kanë një shifër dhjetore; intervali i R 1.2026 që lejon rrumbullakimi (±0,05)
+out("k", "R 1.2026 me indekset e rrumbullakuara: kufiri i poshtëm (lekë)", R0_PAKETE * (ICHK["2025-12"] - 0.05) / (I0 + 0.05))
+out("k", "R 1.2026 me indekset e rrumbullakuara: kufiri i sipërm (lekë)", R0_PAKETE * (ICHK["2025-12"] + 0.05) / (I0 - 0.05))
 # R03: krahasuesi i L95 në skenarin S2 kur paga e Presidentit ndjek ρ pa tavan (leximi R = 0,38 × P)
 for alt in ("A0", "A3"):
     pi_, rho_ = 0.02, 0.05
