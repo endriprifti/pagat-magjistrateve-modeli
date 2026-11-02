@@ -587,17 +587,17 @@ Llogaritja supozon (d) se paga e gushtit 2026 u pagua me 236.425 lekë për të 
 
 Kalendari ndërtohet drejtpërdrejt me rregullin e Nenit 6, pika 2: në çdo vit, kufiri vjetor i kryegjësë shpenzohet për detyrimin e muajit më të vjetër ende të pashlyer, dhe një muaj i mëvonshëm fillon të paguhet vetëm pasi muaji paraardhës është shlyer plotësisht. Kufiri vjetor nuk mund të jetë më i ulët se 10% e shumës së përgjithshme të detyrimit, por kjo dysheme nuk detyron pagesë minimale kur detyrimi mund të shlyhet më herët. Detyrimi nuk ulet: shuma që mbetet pa u paguar brenda kufirit raportohet si « hendek » dhe shlyhet në vitin 2029 mbi kufirin. Rregulli nuk kërkon optimizim, prandaj ligji mund ta shprehë kalendarin pa iu referuar modelit.
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Tavani vjetor                                                      2027   2028   2029   Hendeku   Vonesa mesatare e kryegjësë së paguar (muaj)   Kompensimi IÇK
-  ------------------------------------------------------------------ ------ ------ ------ --------- ---------------------------------------------- ----------------
-  5 miliardë lekë (bazë)                                             5,00   5,00   3,84   0         40,11                                          1,32
+  -------------------------------------------------------------------------------------------------------------------------------------------
+  Tavani vjetor                                                      2027   2028   2029   Hendeku   Vonesa mesatare (muaj)   Kompensimi IÇK
+  ------------------------------------------------------------------ ------ ------ ------ --------- ------------------------ ----------------
+  5 miliardë lekë (bazë)                                             5,00   5,00   3,84   0         40,11                    1,32
 
-  4 miliardë lekë                                                    4,00   4,00   4,00   1,84      44,09                                          1,26
+  4 miliardë lekë                                                    4,00   4,00   4,00   1,84      44,09                    1,26
 
-  7 miliardë lekë                                                    7,00   6,84   0,00   0         35,05                                          1,14
+  7 miliardë lekë                                                    7,00   6,84   0,00   0         35,05                    1,14
 
-  Fondet e kërkuara nga KLGJ për vitet 2027--2028, 5 miliardë lekë   5,00   5,00   ---    3,84      41,28                                          0,97
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Fondet e kërkuara nga KLGJ për vitet 2027--2028, 5 miliardë lekë   5,00   5,00   ---    3,84      41,28                    0,97
+  -------------------------------------------------------------------------------------------------------------------------------------------
 
 Tabela 12. Kalendari i prapambetjeve, në miliardë lekë. Rreshtat me hendek tregojnë mungesë financimi dhe nuk e zbatojnë projektligjin: sipas Nenit 6, pika 2, hendeku shlyhet në vitin 2029 mbi tavanin vjetor, p.sh. me tavan 4 miliardë lekë pagesa e kryegjësë në vitin 2029 bëhet 5,84 miliardë lekë. Kompensimi llogaritet me indeksin e korrikut të vitit të pagesës, ndërsa vonesa mesatare mat vetëm kryegjënë e paguar brenda tavanit. Llogaritja: faza2c_lp.py, faza2c_lp_skenaret.csv; faza3_rishikim.py, seksioni (k).
 
@@ -1054,7 +1054,7 @@ Tabela A1. Fjalori i simboleve dhe i shkurtesave.
 
 # SHTOJCA B. LLOGARITJET E RIPRODHUESHME
 
-Të gjitha shifrat e studimit dalin nga skriptet e mëposhtme, të cilat ekzekutohen me komandën python3 dhe prodhojnë skedarë CSV. Ato gjenden në URL-në: <https://github.com/endriprifti/pagat-magjistrateve-modeli>. Skripti faza2d_testet.py i rillogarit radhazi të gjitha skriptet e Fazës 2, ndërsa faza3_kontrolli.py kontrollon, me një metodë heuristike, që shifrat e tekstit të gjenden në skedarët e rezultateve; ai verifikon praninë e shifrës, jo prejardhjen ose kuptimin e saj, të cilat dokumentohen në skriptet përkatëse. Të dhënat hyrëse (eksporti i Thesarit, eksportet e INSTAT-it për indekset e çmimeve dhe publikimet e pagave), me datat e shkarkimit, gjenden në dosjen te_dhena të së njëjtës depo. Versioni i cituar në këtë punim është commit-i be366b8 i depos (2 nëntor 2026), ndërsa varësitë janë të fiksuara në requirements.txt.
+Të gjitha shifrat e studimit dalin nga skriptet e mëposhtme, të cilat ekzekutohen me komandën python3 dhe prodhojnë skedarë CSV. Ato gjenden në URL-në: <https://github.com/endriprifti/pagat-magjistrateve-modeli>. Skripti faza2d_testet.py i rillogarit radhazi të gjitha skriptet e Fazës 2, ndërsa faza3_kontrolli.py kontrollon, me një metodë heuristike, që shifrat e tekstit të gjenden në skedarët e rezultateve; ai verifikon praninë e shifrës, jo prejardhjen ose kuptimin e saj, të cilat dokumentohen në skriptet përkatëse. Të dhënat hyrëse (eksporti i Thesarit, eksportet e INSTAT-it për indekset e çmimeve dhe publikimet e pagave), me datat e shkarkimit, gjenden në dosjen te_dhena të së njëjtës depo. Versioni i cituar në këtë punim është commit-i 6feb3cd i depos (2 nëntor 2026), ndërsa varësitë janë të fiksuara në requirements.txt.
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Skripti                                    Çfarë llogarit                                                                                                                                        Rezultati
