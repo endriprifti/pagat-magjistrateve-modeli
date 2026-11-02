@@ -7,6 +7,7 @@ Eksportet origjinale nga të cilat skriptet e Fazës 1 ndërtojnë seritë. Të 
 | `thesari/BIG_TABLE.xlsx` | Ministria e Financave, « Pagesa të kryera nga Drejtoria e Përgjithshme e Thesarit » (financa.gov.al), regjistrat ditorë për dhjetë kode institucionesh të sistemit të drejtësisë | janar 2024 – 5 tetor 2026 | `faza1_thesari.py` | `faza1_thesari.csv`, `faza1_thesari_per_fryme.csv` |
 | `instat/Instat_IChK_20261007.xlsx` | INSTAT, « Indeksi i Çmimeve të Konsumit », seria mujore, ECOICOP v2 (eksport i databazës, 7.10.2026, ora 20:43) | janar 2016 – gusht 2026 | `faza1_hicp.py` | `faza1_ichk_mujor.csv` |
 | `instat/Instat_IHCK_20261007.xlsx` | INSTAT, « Indeksi i Harmonizuar i Çmimeve të Konsumit », seria mujore (eksport, 7.10.2026, ora 20:36) | janar 2016 – gusht 2026 | `faza1_hicp.py` | `faza1_hicp_mujor.csv` |
+| `instat/Instat_IChK_tab3_20261102.xlsx` | INSTAT, « Indeksi i Çmimeve të Konsumit », tabela 3, indekset me saktësi të plotë (shkarkuar më 2.11.2026; bazë tjetër nga eksporti i databazës) | janar 2017 – dhjetor 2025 | `faza3_rishikim.py`, seksioni (k) | R 1.2026 me saktësi të plotë (ndjeshmëri) |
 | `instat_pagat/pdf/*.pdf` (31 skedarë) | INSTAT, « Paga mesatare mujore bruto », njoftimet tremujore për shtyp | T4/2018 – T2/2026 | — | — |
 | `instat_pagat/txt/*.txt` | tekstet e PDF-ve të mësipërme, nxjerrë me `pdftotext -layout` | po aty | `faza1_instat.py` | `faza1_instat_pagat_tremujore.csv` |
 

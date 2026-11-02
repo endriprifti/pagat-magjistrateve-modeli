@@ -158,6 +158,8 @@ k,tavan 4 mld/vit: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld),5.
 k,tavan 3 mld/vit: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld),7.839449,
 k,R 1.2026 me indekset e rrumbullakuara: kufiri i poshtëm (lekë),243291.079812,
 k,R 1.2026 me indekset e rrumbullakuara: kufiri i sipërm (lekë),243786.422977,
+k,"R 1.2026 me indekset me saktësi të plotë, INSTAT tabela 3 (lekë)",243590.328649,
+k,Diferenca ndaj R me indekset me një shifër dhjetore (lekë),51.70652,
 k,"A0 | S2, P pa tavan | ndaj vlerës reale të bazës",0.083729,
 k,"A0 | S2, P pa tavan | ndaj referencës së bazës",0.012106,
 k,"A3 | S2, P pa tavan | ndaj vlerës reale të bazës",0.083729,

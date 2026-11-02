@@ -271,6 +271,15 @@ for emri, tavan, hendek in (("tavan 4 mld/vit", 4.0, 1.839449), ("tavan 3 mld/vi
 # R22: indekset e eksportit kanë një shifër dhjetore; intervali i R 1.2026 që lejon rrumbullakimi (±0,05)
 out("k", "R 1.2026 me indekset e rrumbullakuara: kufiri i poshtëm (lekë)", R0_PAKETE * (ICHK["2025-12"] - 0.05) / (I0 + 0.05))
 out("k", "R 1.2026 me indekset e rrumbullakuara: kufiri i sipërm (lekë)", R0_PAKETE * (ICHK["2025-12"] + 0.05) / (I0 - 0.05))
+# R22: R 1.2026 me indekset me saktësi të plotë (INSTAT, tabela 3 e IÇK, seria 1.2017–12.2025, shkarkuar 2.11.2026).
+# Baza e kësaj serie është tjetër, por raporti dhjetor 2025 / mars 2023 nuk varet nga baza.
+import openpyxl
+_ws = openpyxl.load_workbook(DIR / "te_dhena" / "instat" / "Instat_IChK_tab3_20261102.xlsx", data_only=True).worksheets[0]
+_tab3 = {str(h).strip(): v for h, v in zip([c.value for c in _ws[4]], [c.value for c in _ws[6]]) if h}
+assert _ws.cell(6, 2).value == "Gjithsej"
+R26_plote = R0_PAKETE * _tab3["12-25"] / _tab3["03-23"]
+out("k", "R 1.2026 me indekset me saktësi të plotë, INSTAT tabela 3 (lekë)", R26_plote)
+out("k", "Diferenca ndaj R me indekset me një shifër dhjetore (lekë)", R26_plote - R26)
 # R03: krahasuesi i L95 në skenarin S2 kur paga e Presidentit ndjek ρ pa tavan (leximi R = 0,38 × P)
 for alt in ("A0", "A3"):
     pi_, rho_ = 0.02, 0.05
