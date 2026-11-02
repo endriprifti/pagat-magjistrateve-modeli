@@ -9,7 +9,9 @@ Variablat: x[m,y] ≥ 0 = shuma e muajit m e paguar në vitin y; h[m] ≥ 0 = he
 Kufizimet:
   (K-a) Σ_y x[m,y] + h[m] = a_m                     shlyerje e plotë; hendeku raportohet, detyrimi nuk ulet
   (K-b) Σ_m x[m,y] ≤ B_y                            tavani buxhetor vjetor (parametër)
-  (K-c) Σ_m x[m,y] ≥ min(p_min · A, B_y)            asnjë vit pa pagesë
+  (K-c) B_y ≥ p_min · A                             dyshemeja e tavanit (Neni 6/2 i projektligjit): kufiri vjetor
+                                                    nuk mund të jetë më i ulët se 10% e detyrimit; nuk detyron
+                                                    pagesë minimale kur detyrimi mund të shlyhet më herët
   (K-d) pjesa e paguar e muajit më të vjetër ≥ pjesa e paguar e muajit pasardhës, në çdo vit (prioritet)
 Objektivi: min [ Σ x[m,y] · vonesa(m,y)² ] / A  +  M · Σ h[m]
   (çdo lek peshohet me vonesën e vet: një muaj shtesë pritjeje kushton më shumë për detyrimin më të vjetër)
@@ -32,7 +34,7 @@ def detyrimet(n_r=N_R["qendror"]):
 def zgjidh(vitet, B, p_min, n_r=N_R["qendror"], M=1e3):
     det = detyrimet(n_r)
     muajt_d = [m for m, _ in det]; a = np.array([v for _, v in det]) / 1e9; A = a.sum()   # në mld lekë (shkallëzim numerik)
-    B = {y: b / 1e9 for y, b in B.items()}
+    B = {y: max(b / 1e9, p_min * A) for y, b in B.items()}         # (K-c): dyshemeja e tavanit, jo pagesë minimale
     nM, nY = len(det), len(vitet)
     nx = nM * nY
     idx = lambda i, j: i * nY + j
@@ -50,7 +52,6 @@ def zgjidh(vitet, B, p_min, n_r=N_R["qendror"], M=1e3):
         for i in range(nM):
             r[idx(i, j)] = 1
         Aub.append(r.copy()); bub.append(B[y])                       # (K-b)
-        Aub.append(-r); bub.append(-min(p_min * A, B[y]))             # (K-c)
     for j in range(nY):                                                # (K-d)
         for i in range(nM - 1):
             r = np.zeros(nx + nM)
@@ -63,7 +64,7 @@ def zgjidh(vitet, B, p_min, n_r=N_R["qendror"], M=1e3):
     assert res.status == 0, res.message
     x = res.x[:nx].reshape(nM, nY); h = res.x[nx:]
     paguar = x.sum(axis=0)
-    vonesa_mes = (x * vonesa).sum() / max(x.sum(), 1)
+    vonesa_mes = (x * vonesa).sum() / x.sum() if x.sum() > 0 else 0.0
     # Kompensimi i vlerës reale (d): faktori IÇK nga muaji i detyrimit deri në pagesë;
     # IÇK reale deri 8.2026, pastaj 3%/vit (objektivi i BSH).
     def I_at(m):

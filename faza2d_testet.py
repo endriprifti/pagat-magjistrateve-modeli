@@ -86,6 +86,27 @@ def stres_mujor(pi_seq, rho, theta_jashtezak=None, deri="2031-12"):
         R_prev = R
     return humbja_maks, muaji_maks, rishikime
 
+TOL = 1e-9   # pragjet krahasohen me tolerancë, që π e barabartë me pragun të mos e kalojë atë nga gabimi i presjes lundruese
+
+def R_mujore(pi_seq, rho, shkas):
+    """Rruga mujore e paketës 1.2026–12.2031 sipas Nenit 12/2: rishikime të rregullta 1.2028 dhe 1.2030 dhe,
+    kur shkas=True, rishikim i jashtëzakonshëm në muajin pas atij në të cilin, njëkohësisht, rritja kumulative
+    e IÇK nga muaji i indeksit të rishikimit të fundit e kalon 4% dhe inflacioni vjetor e kalon 4% (objektivi 3% + 1 p.p.).
+    Pa shkas, R është konstante brenda vitit dhe përputhet me rruget_vjetore."""
+    m_mat, f_I, R_prev, R = "2025-12", F_ICHK_2026, 243_538.6221, {}
+    for m in muajt("2026-01", "2031-12"):
+        y, mm = map(int, m.split("-")); mp = muaji_para(m)
+        rregull = mm == 1 and y in RISH_VITET
+        k = (int(mp[:4]) - int(m_mat[:4])) * 12 + int(mp[5:]) - int(m_mat[5:])
+        kum = I_muaj(mp, pi_seq) / I_muaj(m_mat, pi_seq) - 1
+        vjet = I_muaj(mp, pi_seq) / I_muaj(f"{int(mp[:4]) - 1:04d}-{mp[5:]}", pi_seq) - 1
+        jasht = shkas and not rregull and k > 0 and kum > 0.04 + TOL and vjet > 0.04 + TOL
+        if rregull or jasht:
+            f_I = I_muaj(mp, pi_seq) / I_BAZA; m_mat = mp
+        ref = I2["2026-01"] * (1 + rho) ** (y - 2026) + SHTESA_GRUP
+        R[m] = max(R_prev, R0_PAKETE * max(f_I, ref / REF0)); R_prev = R[m]
+    return R
+
 # ---------------------------------------------------------------------------
 # Prapambetjet dhe kompensimi sipas vitit (nga LP i 2c)
 # ---------------------------------------------------------------------------
@@ -95,11 +116,15 @@ def prapambetje_vjetore(n_r, pi_seq, B=5e9, vitet=(2027, 2028, 2029)):
     if key not in _lp_cache:
         _lp_cache[key] = lp.zgjidh(list(vitet), {y: B for y in vitet}, 0.10, n_r=n_r)
     r = _lp_cache[key]
-    pag = {y: 0.0 for y in VITET}; komp = {y: 0.0 for y in VITET}
+    pag = {y: 0.0 for y in VITET}; komp = {y: 0.0 for y in VITET}; pag_m = {}
     for m, y, v in r["kalendari"]:
-        pag[y] += v
+        pag[y] += v; pag_m[m] = pag_m.get(m, 0.0) + v
         komp[y] += v * (I_muaj(f"{y}-07", pi_seq) / I_muaj(m, pi_seq) - 1)
-    return pag, komp, r["hendeku"], r["A"]
+    # Neni 6/2: çdo shumë e mbetur shlyhet plotësisht brenda vitit 2029, pavarësisht tavanit, me kompensimin e saj
+    mbetja = [(m, a - pag_m.get(m, 0.0)) for m, a in lp.detyrimet(n_r) if a - pag_m.get(m, 0.0) > 1]
+    shl = sum(v for _, v in mbetja)
+    shl_komp = sum(v * (I_muaj("2029-07", pi_seq) / I_muaj(m, pi_seq) - 1) for m, v in mbetja)
+    return pag, komp, r["hendeku"], r["A"], shl, shl_komp
 
 # ---------------------------------------------------------------------------
 def main():
@@ -117,14 +142,21 @@ def main():
                                                   N_R.items(), (0.0, KONTRIBUTE)):
         pi_seq = {y: pi for y in range(2026, 2032)}
         Rp, Rl = rruget_vjetore(pi_seq, rho)
-        pag, komp, hend, A = prapambetje_vjetore(nr, pi_seq)
+        pag, komp, hend, A, shl, shl_komp = prapambetje_vjetore(nr, pi_seq)
+        R0m, R1m = R_mujore(pi_seq, rho, False), R_mujore(pi_seq, rho, True)
         for y in VITET:
+            assert all(abs(R0m[f"{y}-{k:02d}"] - Rp[y]) < 1e-6 for k in range(1, 13))
             perm = 12 * nr * (Rp[y] - Rl[y]) * (1 + c)
+            jasht = sum(R1m[f"{y}-{k:02d}"] - R0m[f"{y}-{k:02d}"] for k in range(1, 13)) * nr * (1 + c)
             kal = (pag[y] + komp[y]) * (1 + c)
+            shlyerja = (shl + shl_komp) * (1 + c) if y == 2029 else 0.0
+            tot = perm + jasht + kal + shlyerja
             grid.append({"pi": pi, "rho": rho, "N_R": nk, "c": c, "viti": y,
                          "R_paketa": round(Rp[y]), "R_L95": round(Rl[y]),
-                         "kosto_e_perhershme": round(perm), "kosto_kalimtare": round(kal),
-                         "totali": round(perm + kal), "pjesa_e_fondit_2026": round((perm + kal) / PAGA_SHTET_2026, 5),
+                         "kosto_e_perhershme": round(perm), "kosto_rishikimeve_te_jashtezakonshme": round(jasht),
+                         "kosto_kalimtare": round(kal), "shlyerja_e_mbetjes_2029": round(shlyerja),
+                         "totali": round(tot), "totali_pa_shkas_dhe_pa_shlyerje": round(perm + kal),
+                         "pjesa_e_fondit_2026": round(tot / PAGA_SHTET_2026, 5),
                          "hendeku_prapambetjes_pas_2029": round(hend * (1 + c)) if y == 2029 else 0})
     shkruaj("faza2d_fiskale_grid.csv", grid)
     qend = [g for g in grid if g["pi"] == 0.03 and g["rho"] == 0.025 and g["N_R"] == "qendror" and g["c"] == 0.0]
@@ -147,6 +179,18 @@ def main():
     out("9.1", "Viti dhe skenari i kulmit", f'{maks["viti"]}: π {maks["pi"]}, ρ {maks["rho"]}, N_R {maks["N_R"]}, c {maks["c"]}')
     out("9.1", "Kulmi (mld)", maks["totali"] / 1e9)
     out("9.1", "Kulmi / deficiti 2026", maks["totali"] / DEFICITI_2026)
+    out("9.1", "Kulmi / zëri Paga 2026", maks["totali"] / PAGA_SHTET_2026)
+    out("9.1", "Kulmi pa rishikimet e jashtëzakonshme dhe pa shlyerjen e 2029 (mld)",
+        max(g["totali_pa_shkas_dhe_pa_shlyerje"] for g in grid) / 1e9)
+    out("9.1", "Kulmi me shlyerjen e 2029, pa rishikimet e jashtëzakonshme (mld)",
+        max(g["totali"] - g["kosto_rishikimeve_te_jashtezakonshme"] for g in grid) / 1e9)
+    out("9.1", "Kulmi me rishikimet e jashtëzakonshme, pa shlyerjen e 2029 (mld)",
+        max(g["totali"] - g["shlyerja_e_mbetjes_2029"] for g in grid) / 1e9)
+    out("9.1", "Kombinime me rishikime të jashtëzakonshme (π, ρ)",
+        len({(g["pi"], g["rho"]) for g in grid if g["kosto_rishikimeve_te_jashtezakonshme"] > 0}))
+    for y in VITET:
+        out("9.1", f"Gama | {y} | rishikimet e jashtëzakonshme maks (mld)",
+            max(g["kosto_rishikimeve_te_jashtezakonshme"] for g in grid if g["viti"] == y) / 1e9)
     hendeqe = [g for g in grid if g["hendeku_prapambetjes_pas_2029"] > 0]
     out("9.1", "Kombinime me hendek prapambetjesh pas 2029 (B = 5 mld/vit)", len({(g["N_R"], g["c"]) for g in hendeqe}))
     out("9.1", "Hendeku maks (mld)", max([g["hendeku_prapambetjes_pas_2029"] for g in grid] + [0]) / 1e9)
@@ -159,7 +203,7 @@ def main():
     # ============ 2. Testi historik kundërfaktik 1.2019–8.2026 ============
     R0_h = 129_800 + SHTESA_GRUP          # 143.800 = standardi i V35 më 1.1.2019 (V35 §§77, 80) (c)
     def ref_hist(m):
-        if m < "2022-09": return 129_800 + SHTESA_GRUP
+        if m < "2022-10": return 129_800 + SHTESA_GRUP     # VKM 621, datë 28.9.2022: efekt nga tetori 2022 (d)
         if m < "2023-04": return 138_700 + SHTESA_GRUP
         if m < "2026-01": return I2["2023-04"] + SHTESA_GRUP
         return I2["2026-01"] + SHTESA_GRUP

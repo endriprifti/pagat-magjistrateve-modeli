@@ -268,6 +268,28 @@ out("k", "Vlera reale e 152.700 me konventën e ligjit, I(7.2026)/I(8.2022) (lek
 for emri, tavan, hendek in (("tavan 4 mld/vit", 4.0, 1.839449), ("tavan 3 mld/vit", 3.0, 4.839449)):
     out("k", f"{emri}: pagesa e kryegjësë në 2029 me shlyerje të plotë (mld)", tavan + hendek)
 
+# R03: krahasuesi i L95 në skenarin S2 kur paga e Presidentit ndjek ρ pa tavan (leximi R = 0,38 × P)
+for alt in ("A0", "A3"):
+    pi_, rho_ = 0.02, 0.05
+    ref30 = I2["2026-01"] * (1 + rho_) ** 4 + SHTESA_GRUP
+    I_r = I_fund(2029, pi_)
+    P30 = P_2026 * (1 + rho_) ** 4
+    R0_, R_ = (R_95, 0.38 * P30) if alt == "A0" else (U, U * P30 / P_2023)
+    out("k", f"{alt} | S2, P pa tavan | ndaj vlerës reale të bazës", R_ / (R0_ * I_r / I0) - 1)
+    out("k", f"{alt} | S2, P pa tavan | ndaj referencës së bazës", R_ / (R0_ * ref30 / REF0) - 1)
+# R32: kompensimi me indeksin e fundit të publikuar në datën e pagesës (1 korrik → indeksi i majit)
+import faza2c_lp as lp
+_r = lp.zgjidh([2027, 2028, 2029], {y: 5e9 for y in (2027, 2028, 2029)}, 0.10)
+def _I_at(m):
+    if m in ICHK:
+        return ICHK[m]
+    k = lp.muaj_indeks(m) - lp.muaj_indeks("2026-08")
+    return ICHK["2026-08"] * 1.03 ** (k / 12)
+for mm, emri in (("07", "indeksi i korrikut (konventa e modelit)"), ("05", "indeksi i fundit i publikuar më 1 korrik (maji)")):
+    k_ = sum(v * (_I_at(f"{y}-{mm}") / _I_at(m) - 1) for m, y, v in _r["kalendari"])
+    out("k", f"Kompensimi IÇK, kalendari bazë, {emri} (mld)", k_ / 1e9)
+    out("k", f"Kompensimi IÇK, kalendari bazë, {emri} / detyrimi", k_ / _r["A"])
+
 # ---------------- grafiku: rrugët 2019–2026 ----------------
 graf = []
 for m in muajt("2019-01", "2026-12"):

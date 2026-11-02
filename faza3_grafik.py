@@ -9,7 +9,7 @@ x = [date(int(r["muaji"][:4]), int(r["muaji"][5:]), 1) for r in rows]
 def s(k): return [float(r[k]) / 1000 if r[k] not in ("", "None") else None for r in rows]
 plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 9})
 fig, ax = plt.subplots(figsize=(6.3, 3.6), dpi=300)
-ser = [("R_paguar", "R e paguar faktikisht", "#52514e", "-", 1.6, "steps-post"),
+ser = [("R_paguar", "R e paguar, e rindërtuar", "#52514e", "-", 1.6, "steps-post"),
        ("V35_152700_IÇK", "152.700 (shtator 2022) e indeksuar me IÇK", "#8a8984", "--", 1.4, "default"),
        ("L95", "Ligji №95/2026", "#eb6834", "-", 2.0, "steps-post"),
        ("Kesh_A1", "Këshillat (A1)", "#1baf7a", "-.", 2.0, "steps-post"),
@@ -22,7 +22,7 @@ for k, lab, col, ls, lw, ds in ser:
 k, lab, col, ls, lw, ds = ser[0]
 y = s(k)
 ax.plot(x, [v if d <= CUT else None for d, v in zip(x, y)], color=col, ls=ls, lw=lw, drawstyle=ds,
-        label=lab + " (Thesari, deri 9.2026)", zorder=5)
+        label=lab + " (nivelet e akteve; Thesari 1.2024–9.2026)", zorder=5)
 ax.plot(x, [v if d >= CUT else None for d, v in zip(x, y)], color=col, ls=(0, (1, 1.2)), lw=2.6, drawstyle=ds,
         label="R e paguar, e supozuar 10–12.2026 (= L95)", zorder=6)
 ax.axvline(date(2026, 10, 1), color="#b5b4ae", lw=0.8, ls=":", zorder=1)

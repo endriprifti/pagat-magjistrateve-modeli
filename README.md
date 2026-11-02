@@ -2,16 +2,16 @@
 
 Kodi i riprodhueshëm i studimit *« Paga e magjistratëve pas Vendimit të Gjykatës Kushtetuese me №15/2026: një propozim juridiko-matematikor për riparimin e uljes së fshehtë, indeksimin dhe shlyerjen e prapambetjeve »* (Endri Prifti, tetor 2026).
 
-Çdo shifër e tekstit të studimit del nga këto skripte dhe gjendet në një nga skedarët CSV. Të dhënat janë verifikuar deri më 7.10.2026.
+Shifrat e tekstit të studimit dalin nga këto skripte dhe gjenden në skedarët CSV; `faza3_kontrolli.py` e kontrollon këtë heuristikisht (prania e shifrës, jo kuptimi i saj). Të dhënat janë verifikuar deri më 7.10.2026.
 
 ## Versioni i cituar në punim
 
-Punimi i referohet commit-it **`ffdcd1e`** të kësaj depoje (1 nëntor 2026), i cili përmban kodin, të dhënat dhe rezultatet e cituara. Për ta riprodhuar saktësisht:
+Commit-i i cituar në punim jepet në Shtojcën B të tij dhe përmban kodin, të dhënat hyrëse (përfshirë PDF-të e INSTAT-it) dhe rezultatet e cituara. Commit-et pasuese ndryshojnë vetëm këtë README. Për ta riprodhuar saktësisht:
 
 ```bash
 git clone https://github.com/endriprifti/pagat-magjistrateve-modeli
 cd pagat-magjistrateve-modeli
-git checkout ffdcd1e
+git checkout <commit-i nga Shtojca B>
 ```
 
 ## Instalimi
